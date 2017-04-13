@@ -1,0 +1,76 @@
+/*@import "bourbon/bourbon";
+@import "neat/neat";
+
+@import "_settings";
+
+.main-grid {
+
+  img {
+
+  }
+
+  @include grid-container;
+
+  @include grid-column(9);
+
+  @include grid-media($medium-screen) {
+    @include grid-column(12);
+  }
+
+  @include grid-media($small-screen) {
+    @include grid-column(12);
+  }
+
+  .hero {
+    @include grid-container;
+
+    img {
+      @include grid-column(3);
+    }
+
+    .content {
+      @include grid-column(9);
+    }
+
+    img, .content {
+      @include grid-media($small-screen) {
+        @include grid-column(12);
+      }
+    }
+  }
+  .columns {
+    @include grid-container($three-columns-container);
+
+    .main-column {
+      @include grid-container($one-column-container);
+
+      @include grid-column(1, $three-columns-container);
+
+      img {
+        @include grid-column(1, $one-column-container);
+      }
+
+      h2, p {
+        @include grid-column(1, $one-column-container);
+      }
+    }
+
+    @include grid-media($medium-small-screen) {
+      @include grid-container($one-column-container);
+
+      .main-column {
+        @include grid-container($one-column-container);
+
+        @include grid-column(1, $one-column-container);
+        img {
+          @include grid-column(1, $one-column-container);
+        }
+
+        h2, p {
+          @include grid-column(1, $one-column-container);
+        }
+      }
+    }
+  }
+}
+*/

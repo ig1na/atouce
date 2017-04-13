@@ -1,0 +1,20 @@
+@media screen and (max-width: 660px) {
+  nav[role="custom-dropdown"] ul {
+    display: none;
+    height: 100%; }
+  nav[role="custom-dropdown"] label {
+    position: relative;
+    display: block;
+    width: 100%; }
+  nav[role="custom-dropdown"] label:after {
+    position: absolute;
+    content: "\2261"; }
+  nav[role="custom-dropdown"] input:checked ~ #header-menu ul {
+    display: block; }
+    nav[role="custom-dropdown"] input:checked ~ #header-menu ul > li {
+      width: 100%; }
+      nav[role="custom-dropdown"] input:checked ~ #header-menu ul > li > a {
+        display: block;
+        height: 2em;
+        padding-left: 1em;
+        background-color: #b7f1ff; } }

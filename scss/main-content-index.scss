@@ -1,0 +1,240 @@
+@import "bourbon/bourbon";
+@import "_settings";
+
+.carousel {
+  max-width: 1920px;
+  margin: 0 auto;
+
+  height: 400px;
+  overflow: hidden;
+
+  img {
+    width: 1920px;
+
+  }
+}
+
+.main {
+  width: 90%;
+  max-width: modular-scale(9);
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+
+  img {
+    border: 1px solid grey;
+  }
+
+  .main-content {
+
+    //width: 70%;
+    max-width: modular-scale(9);
+    margin: 0 auto;
+
+
+    //text-indent: 1.5rem;
+
+
+
+    h2 {
+
+      padding-bottom: 2rem;
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top:  -0.7rem;
+      line-height: 1.5rem;
+    }
+
+    .hero {
+      margin-bottom: 2rem;
+      //background-color: grey;
+
+      > img {
+        min-width: 15%;
+        max-width: 20%;
+        float: left;
+        @include margin(0.5rem 2rem 0.7rem 0);
+      }
+    }
+
+    .columns {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-top: 1.8rem;
+
+      .main-column {
+        min-width: 0;
+        width: 30%;
+
+        > img {
+          width: 100%;
+        }
+
+        h2 {
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+
+  .widget {
+      display: flex;
+      flex-flow: column wrap;
+      width: 20%;
+      align-self: center;
+
+      .widget-info {
+
+        padding-bottom: 2rem;
+
+        > img {
+          width: 100%;
+        }
+      }
+
+
+      @include margin(2rem 0 2rem 2rem);
+      @include padding(2rem 0 2rem 2rem);
+
+      border-left: 1px solid grey;
+  }
+}
+
+
+
+form {
+  background-color: $dark-green;
+  @include padding(3rem 0 3rem 0);
+
+
+
+  h2 {
+    color: $light-green;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  input, textarea {
+    box-shadow: 0 2px 0 darken($light-green, 50);
+
+  }
+
+  label {
+    float: left;
+    text-align: right;
+    margin-right: 15px;
+    width: 50%;
+    color: $light-green;
+  }
+
+  #{$all-text-inputs} {
+
+    @include padding(0 0.5rem 0 0.5rem);
+    border: none;
+    //border-radius: 5px;
+    background-color: $light-green;
+    box-shadow: inset 0 10px 80px -50px darken($light-green, 70);
+    transition: all 0.5s ease;
+  }
+
+  input:focus, textarea:focus {
+    box-shadow: none;
+  }
+
+  textarea {
+    display: block;
+    margin: 0 auto;
+    margin-right: 40%;
+    max-width: 100%;
+  }
+
+  input[type="submit"] {
+    position: relative;
+    display: block;
+    @include margin(2rem auto 0 auto);
+    cursor: pointer;
+
+    border:none;
+    background-color: $light-green;
+
+    @include padding(0 1rem 0 1rem);
+  }
+
+  input[type="submit"]:active {
+    box-shadow: none;
+    top: 2px;
+    //transform: translateY(2px);
+  }
+}
+
+
+@media all and (max-width: 1100px) {
+  .main {
+    flex-direction: column;
+
+    .widget {
+      width: 100%;
+
+      border: none;
+      @include margin(2rem 0 0 0);
+      @include padding(2rem 0 0 0);
+      border-top: 1px solid grey;
+
+      .widget-info {
+        text-align: center;
+        > img {
+          width: 30%;
+
+        }
+      }
+
+
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .main {
+    .main-content {
+      width: 95%;
+
+      .columns {
+        flex-direction: column;
+
+        .main-column {
+          width: 100% !important;
+          margin-bottom: 2rem;
+          > img {
+            display: block;
+            min-width: 40%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+@media all and (max-width: 550px) {
+  .main-content {
+    width: 95%;
+
+    .hero {
+      > img {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

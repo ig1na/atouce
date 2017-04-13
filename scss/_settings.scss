@@ -1,0 +1,23 @@
+$modular-scale-ratio: $golden;
+$modular-scale-base: 1.5em;
+
+$light-green: #bafff3;
+$medium-green: darken($light-green, 30%);
+$dark-green: darken($light-green, 60%);
+
+$light-orange: #fcffd3;
+$medium-orange: darken($light-orange, 25%);
+$dark-orange: saturate(darken($light-orange, 60%), 80%);
+
+$light-blue: #b7f1ff;
+$medium-blue: darken($light-blue, 25%);
+$dark-blue: saturate(darken($light-blue, 60%), 80%);
+
+//$header-height: 90px;
+$header-height: modular-scale(3);
+$menu-button: modular-scale(2);
+$logo-width: modular-scale(1);
+$logo-height: 70px;
+
+//minimum resolution
+$min-media-resolution: 660px;

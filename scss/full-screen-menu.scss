@@ -1,0 +1,75 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "_settings";
+
+
+#header-menu {
+    text-align: center;
+    font-family: $helvetica;
+
+    li {
+      display: inline;
+    }
+
+    ul {
+      position: relative;
+      top:   - ($menu-button * 0.8);
+
+      transition: all 0.5s ease;
+
+      a {
+        //positionning menu buttons
+        //z-index: -1;
+        position: relative;
+        display: inline-block;
+        width: 10%;
+        height: $menu-button;
+        line-height: 2em;
+        padding: 10px;
+        //top:   - ($menu-button * 0.8);
+        //@include margin(0);
+
+        text-decoration: none;
+        overflow: hidden;
+
+        @include border-bottom-radius(10px);
+
+        background-color: $light-green;
+        background-image: linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0));
+        color: $dark-blue;
+        box-shadow: inset 0 ($menu-button * 1.2) 10px -20px $dark-green;
+        /*menu fall animation*/
+        transition: box-shadow 0.5s ease,
+                    top 0.5s ease,
+                    margin-top 0.5s ease,
+                    height 0.5s ease,
+                    background 0.5s ease;
+
+
+      }
+    }
+
+
+}
+
+#header-menu:hover{
+
+  ul {
+    top: 0;
+  }
+
+  a {
+    top: 0;
+    box-shadow: inset 0 ($menu-button - ($menu-button * 0.6)) 10px -20px $dark-blue;
+
+  }
+
+  a:hover{
+      background-color: $medium-green;
+      box-shadow: inset 0 ($menu-button - ($menu-button * 0.6)) 10px -20px $dark-blue;
+      top: 5px;
+      margin-top: -5px;
+      //height: $menu-button + 5px;
+
+    }
+  }

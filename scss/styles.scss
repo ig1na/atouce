@@ -1,0 +1,95 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+@import "_settings";
+
+//import static menu
+@import "static-menu";
+
+* {
+  font-family: 'Titillium Web', sans-serif;
+  color: #545454;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+/* checkbox hack fix for android*/
+body {
+  -webkit-animation: bugfix infinite 1s;;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+@-webkit-keyframes bugfix {
+  from { padding: 0; }
+  to { padding: 0; }
+}
+
+.header-wrapper {
+  z-index: 1;
+  position: relative;
+  height: $header-height;
+  background-color: #fff;
+
+  @include padding(null 2em null 2em);
+
+  .header-text {
+    float: left;
+    line-height: $header-height;
+    display: none;
+  }
+
+  .logo-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.menu {
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+}
+
+.mini-footer {
+
+  background-color: darken($dark-green, 5);
+
+  ul {
+    margin-left: 1rem;
+    li:first-child {
+      list-style-type: none;
+    }
+
+    li {
+      color: #f1f1f1;
+      list-style-type: square;
+      margin-right: 1.5rem;
+      float: left;
+    }
+  }
+
+  .mini-foot-r {
+    color: #f1f1f1;
+    text-align: right;
+    margin-right: 1rem;
+  }
+
+}
+
+
+@media all and (max-width: 800px) {
+  @import "mobile-menu";
+
+  .carousel {
+    display: none !important;
+  }
+}
