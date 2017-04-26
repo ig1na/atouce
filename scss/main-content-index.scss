@@ -3,7 +3,6 @@
 
 .carousel {
   max-width: 1920px;
-  margin: 0 auto;
 
   height: 400px;
   overflow: hidden;
@@ -11,6 +10,41 @@
   img {
     width: 1920px;
 
+  }
+
+  .carousel-content {
+    //display: block;
+    position: relative;
+
+    * {
+      color: $light-green;
+    }
+
+    .carousel-link {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      top: 30%;
+      bottom: 0;
+      text-align: center;
+      a {
+        color: $light-green;
+        text-decoration: none;
+        background-color: $dark-green;
+        padding: 0 3em 0 3em;
+        margin: 10px 0 10px 0;
+        border: 1px solid $light-green;
+        border-radius: 20px;
+
+        transition: all 0.5s ease;
+      }
+
+      a:hover {
+        background-color: lighten($dark-green, 10);
+      }
+    }
   }
 }
 
@@ -225,15 +259,26 @@ form {
 }
 
 @media all and (max-width: 550px) {
-  .main-content {
-    width: 95%;
+  .main {
 
-    .hero {
-      > img {
-        float: none;
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 2rem;
+    .main-content {
+      width: 95%;
+
+      .hero {
+
+        .content {
+          display: block;
+          float: none;
+        }
+
+        > img {
+          max-width: none;
+          width: 200px;
+          float: none;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 2rem;
+        }
       }
     }
   }

@@ -1,0 +1,52 @@
+.main {
+  width: 90%;
+  margin: 0 auto; }
+  .main img {
+    float: left;
+    margin-right: 2em;
+    border: 1px solid grey; }
+  .main .intro {
+    float: left;
+    margin: 1em 0 20px; }
+  .main .intro-txt {
+    padding-top: 3em; }
+
+.prenom {
+  font-weight: normal; }
+
+.ribbon {
+  background-color: #008770;
+  clear: both;
+  padding: 1em 0 2em; }
+  .ribbon * {
+    color: #bafff3;
+    text-align: center; }
+  .ribbon .elus-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-top: 1.5em; }
+  .ribbon .elu {
+    max-width: 200px; }
+    .ribbon .elu img {
+      max-width: 200px; }
+  .ribbon .nom-elu * {
+    color: #21ffd8; }
+
+.members {
+  padding: 1em 0 2em; }
+  .members * {
+    text-align: center; }
+  .members .member-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
+    .members .member-wrapper .member {
+      max-width: 200px;
+      padding: 45px; }
+      .members .member-wrapper .member img {
+        max-width: 200px; }
+  .members h1 {
+    text-align: center; }

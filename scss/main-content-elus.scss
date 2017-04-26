@@ -1,0 +1,93 @@
+@import "bourbon/bourbon";
+@import "_settings";
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+
+  img {
+    float: left;
+    margin-right: 2em;
+    border: 1px solid grey;
+  }
+
+  .intro {
+    float: left;
+    @include margin(1em 0 20px 0);
+  }
+
+  .intro-txt {
+    padding-top: 3em;
+
+  }
+
+}
+
+.prenom {
+  font-weight: normal;
+}
+
+.ribbon {
+    background-color: $dark-green;
+    clear: both;
+    @include padding(1em 0 2em 0);
+
+    * {
+      color: $light-green;
+      text-align: center;
+    }
+
+    .elus-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      margin-top: 1.5em;
+    }
+
+    .elu {
+      max-width: 200px;
+      img {
+        max-width: 200px;
+      }
+    }
+
+    .nom-elu {
+      * {
+        color:  darken($light-green, 30);
+      }
+
+    }
+}
+
+.members {
+
+  @include padding(1em 0 2em 0);
+
+  * {
+    text-align: center;
+  }
+
+  .member-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    //margin-top: 1.5em;
+
+    .member {
+      max-width: 200px;
+      padding: 45px;
+
+      img {
+        max-width: 200px
+      }
+    }
+  }
+
+
+
+  h1 {
+    text-align: center;
+  }
+}

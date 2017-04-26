@@ -1,0 +1,62 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+@import "_settings";
+
+.menu {
+
+  word-wrap: normal !important;
+
+  ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-right: modular-scale(2);
+    background-color: white;
+  }
+
+  li {
+    display: inline-block;
+
+  }
+
+  a {
+    display: block;
+    position: relative;
+    width: modular-scale(3);
+    height: modular-scale(3);
+    margin-right: -4px;
+
+    background-color: $light-green;
+    margin-left: modular-scale(2);
+    border-radius: 100%;
+    //border: 2px solid darken($light-green, 50);
+
+    box-shadow: inset 0 0 0 0 darken($light-green, 50);
+
+    transition: all 0.1s ease-in-out;
+
+    p {
+      bottom: 0;
+      position: absolute;
+      display: block;
+      z-index: -1;
+      width: 100%;
+      transition: all 0.5s ease;
+
+      color: $light-green;
+      text-shadow: 0 1px 5px black;
+    }
+  }
+
+
+  a:hover {
+    p {
+      bottom: -70%;
+    }
+
+    box-shadow: inset 0 3px 5px darken($light-green, 50);
+  }
+
+}

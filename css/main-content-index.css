@@ -1,10 +1,33 @@
 .carousel {
   max-width: 1920px;
-  margin: 0 auto;
   height: 400px;
   overflow: hidden; }
   .carousel img {
     width: 1920px; }
+  .carousel .carousel-content {
+    position: relative; }
+    .carousel .carousel-content * {
+      color: #bafff3; }
+    .carousel .carousel-content .carousel-link {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      top: 30%;
+      bottom: 0;
+      text-align: center; }
+      .carousel .carousel-content .carousel-link a {
+        color: #bafff3;
+        text-decoration: none;
+        background-color: #008770;
+        padding: 0 3em 0 3em;
+        margin: 10px 0 10px 0;
+        border: 1px solid #bafff3;
+        border-radius: 20px;
+        transition: all 0.5s ease; }
+      .carousel .carousel-content .carousel-link a:hover {
+        background-color: #00ba9a; }
 
 .main {
   width: 90%;
@@ -127,9 +150,14 @@ form {
           max-width: 100%; } }
 
 @media all and (max-width: 550px) {
-  .main-content {
+  .main .main-content {
     width: 95%; }
-    .main-content .hero > img {
+    .main .main-content .hero .content {
+      display: block;
+      float: none; }
+    .main .main-content .hero > img {
+      max-width: none;
+      width: 200px;
       float: none;
       display: block;
       margin: 0 auto;
