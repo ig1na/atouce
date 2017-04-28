@@ -1,19 +1,25 @@
 @import "bourbon/bourbon";
 @import "_settings";
 
+
+//la classe main permet de faire en sorte que les éléments inclus prennent 90% de la page et soient centrés
 .main {
   width: 90%;
   margin: 0 auto;
 
   img {
-    float: left;
     margin-right: 2em;
     border: 1px solid grey;
   }
 
+  //intro comprend la première partie de la page, décrivant le role du CE
   .intro {
     float: left;
     @include margin(1em 0 20px 0);
+
+    img {
+      float: left;
+    }
   }
 
   .intro-txt {
@@ -21,10 +27,6 @@
 
   }
 
-}
-
-.prenom {
-  font-weight: normal;
 }
 
 .ribbon {

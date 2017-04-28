@@ -19,9 +19,12 @@
       float: left;
       margin: 0.5rem 2rem 0.7rem 0; }
   .main-content .columns {
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding-top: 1.8rem; }
     .main-content .columns .main-column {
@@ -36,6 +39,7 @@
   .main-content {
     width: 95%; }
     .main-content .columns {
+      -ms-flex-direction: column;
       flex-direction: column; }
       .main-content .columns .main-column {
         width: 100%;

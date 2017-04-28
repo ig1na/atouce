@@ -25,8 +25,8 @@
       <label for="menu" onclick></label>
       <ul>
         <li><a href="/index.php"><p>Accueil</p></a></li>
-        <li><a href="#"><p>Activités</p></a></li>
-        <li><a href="#"><p>Votre CE</p></a></li>
+        <li><a href="/activites.php"><p>Activités</p></a></li>
+        <li><a href="/elus.php"><p>Votre CE</p></a></li>
         <li><a href="#"><p>Les budgets</p></a></li>
         <li><a href="#"><p>L'agenda du CE</p></a></li>
         <li><a href="admin/"><p>Admin</p></a></li>
@@ -39,7 +39,7 @@
         <img src="images/profile.gif"/>
         <div class="intro-txt">
           <h2>LE RÔLE DU CE</h2>
-          <p>Il participe à la vie est à la marche générale de l'établissement.
+          <p>Il participe à la vie et à la marche générale de l'établissement.
              Le CE est consulté par l'employeur sur les questions portant sur la gestion de l'évolution économique et financière de l'entreprise,
              notamment l'organisation du temps de travail, l'introduction de nouvelles technologies, l'évolution et les plans de sauvegarde de
              l'emploi, la formation et l'égalité professionnelle.</p>
@@ -56,7 +56,7 @@
           foreach ($db->query($requete) as $row) {
             echo '<div class="elu">';
             echo '<img src="images/profile.gif" alt="">';
-            echo  '<div class="nom-elu"><h2><span class="prenom">'. $row['prenom'] .'</span> '. $row['nom'] .'</h2></div>';
+            echo  '<div class="nom-elu"><h2><span class="light-text">'. $row['prenom'] .'</span> '. $row['nom'] .'</h2></div>';
             echo '<h3>'. $row['role'] .'</h3>';
             echo '<p>' . $row['syndicat'] .'</p>';
             echo '<p>' . $row['commission'] .'</p>';
@@ -79,7 +79,7 @@
             foreach ($db->query($requete) as $row) {
               echo '<div class="member">';
               echo '<img src="images/profile.gif" alt="">';
-              echo  '<div class="nom-elu"><h2><span class="prenom">'. $row['prenom'] .'</span> '. $row['nom'] .'</h2></div>';
+              echo  '<div class="nom-elu"><h2><span class="light-text">'. $row['prenom'] .'</span> '. $row['nom'] .'</h2></div>';
               echo '<h3>'. $row['role'] .'</h3>';
               echo '<p>' . $row['syndicat'] .'</p>';
               echo '<p>' . $row['commission'] .'</p>';

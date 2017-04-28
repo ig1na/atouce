@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: 'Titillium Web', sans-serif;
   color: #545454;
@@ -5,7 +6,7 @@
   padding: 0;
   word-wrap: break-word; }
 
-/* checkbox hack fix for android*/
+/* fix du problème de check box avec android */
 body {
   -webkit-animation: bugfix infinite 1s; }
 
@@ -20,6 +21,7 @@ input[type=checkbox] {
   to {
     padding: 0; } }
 
+/* fix du problème de check box avec android */
 .header-wrapper {
   z-index: 1;
   position: relative;

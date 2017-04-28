@@ -2,17 +2,15 @@
   width: 90%;
   margin: 0 auto; }
   .main img {
-    float: left;
     margin-right: 2em;
     border: 1px solid grey; }
   .main .intro {
     float: left;
     margin: 1em 0 20px; }
+    .main .intro img {
+      float: left; }
   .main .intro-txt {
     padding-top: 3em; }
-
-.prenom {
-  font-weight: normal; }
 
 .ribbon {
   background-color: #008770;

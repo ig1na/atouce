@@ -13,7 +13,7 @@
   word-wrap: break-word;
 }
 
-/* checkbox hack fix for android*/
+/* fix du problème de check box avec android */
 body {
   -webkit-animation: bugfix infinite 1s;;
 }
@@ -28,6 +28,7 @@ input[type=checkbox] {
   from { padding: 0; }
   to { padding: 0; }
 }
+/* fix du problème de check box avec android */
 
 .header-wrapper {
   z-index: 1;
@@ -63,7 +64,6 @@ input[type=checkbox] {
 }
 
 .mini-footer {
-
   background-color: darken($dark-green, 5);
 
   ul {

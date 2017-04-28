@@ -1,3 +1,4 @@
+<?php include("../phpinc/includes/connexionDB.php"); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -28,7 +29,7 @@
       <label for="menu" onclick></label>
       <ul>
         <li><a href=""><p>Accueil</p></a></li>
-        <li><a href="#"><p>Activités</p></a></li>
+        <li><a href="/activites.php"><p>Activités</p></a></li>
         <li><a href="/elus.php"><p>Votre CE</p></a></li>
         <li><a href="#"><p>Les budgets</p></a></li>
         <li><a href="#"><p>L'agenda du CE</p></a></li>
@@ -86,7 +87,7 @@
     <div class="main">
       <div class="main-content">
         <div class="hero">
-        <img src="images/profile.gif" alt="president du CE">
+        <img src="images/profile-5.jpg" alt="president du CE">
           <div class="content">
             <h2>Un mot de votre C.E.</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -101,43 +102,18 @@
         </div>
 
         <div class="columns">
-          <div class="main-column">
-            <img src="images/phone.jpg" alt="mains qui utilisent un smartphone">
-            <h2>CE : des actions au quotidien</h2>
-            <p>Etre un élu du comité d'entreprise est un challenge de tous les jours.
-              Engagé dans le dialogue social, il participe à la création et à l'organisation
-              d'un programme d'activités qui s'adresse à tous les salariés de l'enrtreprise.
 
-              C'est aussi un engagement fort avec la possibilité de donner un avis sur les
-              perspectives engagées par l'entreprise.
-            </p>
-          </div>
+          <?php
+            $requete = 'SELECT * FROM colonnes_accueil';
+            foreach($db->query($requete) as $row) {
+              echo '<div class="main-column">';
+              echo '<div class="column-img-wrapper"><a href="'. $row['link'] .'"><p>Visiter la page</p></a><img src="images/'. $row['img'] .'"></div>';
+              echo '<div class="column-content"><h2>'. $row['titre'] .'</h2><p>'. $row['contenu'] .'</p></div>';
+              echo '<a href="'. $row['link'] .'">En savoir plus..</a>';
+              echo '</div>';
+            }
 
-          <div class="main-column">
-            <img src="images/paris.jpg" alt="paris">
-            <h2>Au programme</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-
-          <div class="main-column">
-            <img src="images/equipe_puzzle.jpg" alt="plusieurs personnes qui assemblent un puzzle">
-            <h2>Les budgets</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-              pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
+           ?>
         </div>
       </div>
       <div class="widget">
