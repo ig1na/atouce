@@ -21,8 +21,10 @@
     </header>
 
     <nav class="menu">
-      <input type="checkbox" id="menu">
-      <label for="menu" onclick></label>
+      <div class="menu-button">
+        <a class="threelines-button" href="#menu">
+        </a>
+      </div>
       <ul>
         <li><a href="/index.php"><p>Accueil</p></a></li>
         <li><a href="/activites.php"><p>Activités</p></a></li>
@@ -105,6 +107,10 @@
       </div>
     </footer>
 
-
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+    <script src="js/mobile-menu.js"></script>
   </body>
 </html>

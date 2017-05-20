@@ -7,18 +7,17 @@ $(document).ready(function() {
 
         events: [
         {
-            title  : 'Concours de moustache',
-            start  : '2017-04-13'
+            title  : 'Concours Photo',
+            start  : '2017-05-13'
         },
         {
-            title  : 'Meeting tuning',
-            start  : '2017-04-15',
-            end    : '2017-04-17'
+            title  : 'Sortie d\'équipe',
+            start  : '2017-05-15',
+            end    : '2017-05-17'
         },
         {
             title  : 'Degustation de bières',
-            start  : '2017-04-20',
-            allDay : false // will make the time show
+            start  : '2017-05-20',
         }
     ]
     })

@@ -12,6 +12,7 @@
   .menu a {
     display: block;
     position: relative;
+    overflow: hidden;
     width: 6.3537em;
     height: 6.3537em;
     margin-right: -4px;
@@ -19,17 +20,15 @@
     margin-left: 3.92689em;
     border-radius: 100%;
     box-shadow: inset 0 0 0 0 #00ba9a;
-    transition: all 0.1s ease-in-out; }
+    transition: all 0.5s ease; }
     .menu a p {
-      bottom: 0;
+      top: -70%;
       position: absolute;
       display: block;
-      z-index: -1;
       width: 100%;
       transition: all 0.5s ease;
-      color: #bafff3;
-      text-shadow: 0 1px 5px black; }
+      color: #008770; }
   .menu a:hover {
     box-shadow: inset 0 3px 5px #00ba9a; }
     .menu a:hover p {
-      bottom: -70%; }
+      top: 20%; }

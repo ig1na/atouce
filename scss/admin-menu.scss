@@ -24,6 +24,7 @@
   a {
     display: block;
     position: relative;
+    overflow: hidden;
     width: modular-scale(3);
     height: modular-scale(3);
     margin-right: -4px;
@@ -35,25 +36,25 @@
 
     box-shadow: inset 0 0 0 0 darken($light-green, 50);
 
-    transition: all 0.1s ease-in-out;
+    transition: all 0.5s ease;
 
     p {
-      bottom: 0;
+      top: -70%;
       position: absolute;
       display: block;
-      z-index: -1;
+      //z-index: -1;
       width: 100%;
       transition: all 0.5s ease;
 
-      color: $light-green;
-      text-shadow: 0 1px 5px black;
+      color: $dark-green;
+      //text-shadow: 0 1px 5px black;
     }
   }
 
 
   a:hover {
     p {
-      bottom: -70%;
+      top: 20%;
     }
 
     box-shadow: inset 0 3px 5px darken($light-green, 50);

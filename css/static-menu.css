@@ -14,55 +14,44 @@
   width: 10%;
   min-width: 140px;
   margin-right: -4px; }
-
-.menu a {
-  text-decoration: none;
-  color: #008770;
-  display: block;
-  text-shadow: 0 1px 1px #54ffe1;
-  transition: all 0.4s ease-in-out; }
+  .menu li a {
+    text-decoration: none;
+    color: #008770;
+    display: block;
+    text-shadow: 0 1px 1px #54ffe1;
+    transition: all 0.4s ease-in-out; }
+  .menu li a:hover {
+    background-color: #00edc4; }
+  .menu li a:active, .menu li a:visited, .menu li a:focus {
+    border: none; }
+  .menu li a:active p {
+    color: white;
+    transform: translateY(2px); }
 
 .menu p {
   transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1); }
 
-.menu a:hover {
-  background-color: #00edc4; }
-
-.menu a:active, .menu a:visited, .menu a:focus {
-  border: none; }
-
-.menu a:active p {
-  color: white;
-  transform: translateY(2px); }
-
-@media all and (max-width: 800px) {
+@media all and (max-width: 860px) {
   label {
     cursor: pointer;
     user-select: none; }
   .menu ul {
-    display: none;
-    height: 100%; }
+    display: none; }
     .menu ul li {
-      margin-bottom: -5px;
       margin-left: -4px;
       width: 100%; }
-  .menu label {
+  .menu .menu-button {
     position: relative;
-    display: block;
-    width: 100%;
-    min-height: 3em;
-    background-color: #bafff3; }
-  .menu label:after {
-    position: absolute;
-    right: 0.8em;
-    top: 0;
-    content: "\2261";
-    font-size: 2em; }
-  .menu input:checked ~ ul {
-    display: block; }
-    .menu input:checked ~ ul > li {
-      width: 100%; }
-  .menu input:checked ~ label {
-    color: white; }
+    background-color: #bafff3;
+    min-height: 3em; }
+    .menu .menu-button .threelines-button {
+      content: "";
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      width: 1em;
+      height: 0.200em;
+      border-top: 0.600em double #000;
+      border-bottom: 0.200em solid #000; }
   .carousel {
     display: none !important; } }

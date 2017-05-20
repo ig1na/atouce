@@ -1,0 +1,50 @@
+body, html {
+  height: 100%; }
+
+.main {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  .main input, .main button, .main textarea {
+    display: block; }
+  .main > .main-accueil {
+    height: 100%;
+    width: 100%; }
+    .main > .main-accueil > .accueil-menu {
+      float: left;
+      height: 100%;
+      width: 5%;
+      background-color: #bafff3;
+      z-index: 2; }
+    .main > .main-accueil > .accueil {
+      position: relative;
+      height: 300%;
+      width: 95%;
+      margin-left: 5%;
+      top: 0;
+      transition: top 0.7s ease; }
+      .main > .main-accueil > .accueil > .intro {
+        position: relative;
+        height: 33.33%; }
+        .main > .main-accueil > .accueil > .intro > .intro-column-wrapper {
+          height: 90%;
+          display: flex;
+          flex-direction: row;
+          overflow-y: scroll; }
+          .main > .main-accueil > .accueil > .intro > .intro-column-wrapper > .intro-column {
+            height: 100%; }
+      .main > .main-accueil > .accueil > .articles {
+        position: relative;
+        height: 33.33%; }
+      .main > .main-accueil > .accueil > .widgets {
+        position: relative;
+        height: 33.33%; }
+
+.show-first {
+  top: 0 !important; }
+
+.show-second {
+  top: -100% !important; }
+
+.show-third {
+  top: -200% !important; }

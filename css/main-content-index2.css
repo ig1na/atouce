@@ -1,0 +1,191 @@
+.carousel .carousel-content {
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  background-color: grey; }
+  .carousel .carousel-content .carousel-link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -200px;
+    text-align: center;
+    transition: all 0.5s ease; }
+    .carousel .carousel-content .carousel-link * {
+      color: #eee;
+      text-shadow: 0 1px 2px black; }
+    .carousel .carousel-content .carousel-link a {
+      background-color: #008770;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      padding: 0 2em 0 2em;
+      text-decoration: none; }
+  .carousel .carousel-content .image {
+    height: 100%; }
+    .carousel .carousel-content .image .grey-background {
+      height: 100%;
+      background-color: black;
+      opacity: 0;
+      transition: all 0.5s ease; }
+
+.carousel .carousel-content:hover .carousel-link {
+  top: 40%; }
+
+.carousel .carousel-content:hover .image .grey-background {
+  opacity: 0.3; }
+
+.main {
+  width: 90%;
+  margin: 0 auto; }
+  .main .main-content {
+    width: 75%;
+    float: left;
+    margin: 2rem 0 0 0; }
+    .main .main-content .hero img {
+      display: block;
+      float: left;
+      width: 30%;
+      margin: 0 2% 2em 0; }
+    .main .main-content .hero .hero-content {
+      width: 65%;
+      float: right;
+      margin: 0 auto;
+      margin-bottom: 2em; }
+      .main .main-content .hero .hero-content h2 {
+        line-height: 1; }
+      .main .main-content .hero .hero-content p {
+        margin-top: 1em; }
+    .main .main-content .columns {
+      clear: both;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .main .main-content .columns > .main-column {
+        width: 30%; }
+        .main .main-content .columns > .main-column > .column-content h2 {
+          line-height: 1; }
+        .main .main-content .columns > .main-column > .column-content p {
+          margin-top: 1em; }
+        .main .main-content .columns > .main-column > .column-img-wrapper {
+          width: 100%;
+          margin: 5% 0 5% 0; }
+          .main .main-content .columns > .main-column > .column-img-wrapper > .column-img {
+            position: relative;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            background-color: grey; }
+            .main .main-content .columns > .main-column > .column-img-wrapper > .column-img > img {
+              width: 100%;
+              display: block;
+              transition: all 0.5s ease; }
+            .main .main-content .columns > .main-column > .column-img-wrapper > .column-img > a {
+              position: absolute;
+              display: block;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              background-color: transparent;
+              transition: all 0.5s ease;
+              text-decoration: none; }
+              .main .main-content .columns > .main-column > .column-img-wrapper > .column-img > a > p {
+                margin-top: -100px;
+                transition: all 0.5s ease;
+                color: #eee; }
+        .main .main-content .columns > .main-column > .column-img-wrapper:hover > .column-img > a {
+          background-color: rgba(0, 0, 0, 0.5); }
+          .main .main-content .columns > .main-column > .column-img-wrapper:hover > .column-img > a > p {
+            margin-top: 30%; }
+  .main .widget {
+    width: 20%;
+    float: right;
+    margin: 2rem 0 0 0; }
+    .main .widget .widget-info img {
+      width: 100%; }
+
+footer form {
+  background-color: #008770;
+  padding: 2rem 0 3rem 0;
+  margin-top: 2rem; }
+  footer form h2 {
+    color: #bafff3;
+    text-align: center;
+    padding-bottom: 20px; }
+  footer form input, footer form textarea {
+    box-shadow: 0 2px 0 #00ba9a; }
+  footer form label {
+    float: left;
+    text-align: right;
+    margin-right: 15px;
+    width: 50%;
+    color: #bafff3; }
+  footer form input[type="color"], footer form input[type="date"], footer form input[type="datetime"], footer form input[type="datetime-local"], footer form input[type="email"], footer form input[type="month"], footer form input[type="number"], footer form input[type="password"], footer form input[type="search"], footer form input[type="tel"], footer form input[type="text"], footer form input[type="time"], footer form input[type="url"], footer form input[type="week"], footer form input:not([type]), footer form textarea {
+    padding: 0 0.5rem;
+    border: none;
+    background-color: #bafff3;
+    box-shadow: inset 0 10px 80px -50px #005445;
+    transition: all 0.5s ease; }
+  footer form input:focus, footer form textarea:focus {
+    box-shadow: none; }
+  footer form textarea {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%; }
+  footer form input[type="submit"] {
+    position: relative;
+    display: block;
+    margin: 2rem auto 0;
+    cursor: pointer;
+    border: none;
+    background-color: #bafff3;
+    padding: 0 1rem; }
+  footer form input[type="submit"]:active {
+    box-shadow: none;
+    top: 2px; }
+
+@media all and (max-width: 1100px) {
+  .main {
+    flex-direction: column; }
+    .main .main-content {
+      width: 100%; }
+    .main .widget {
+      width: 100%;
+      border: none;
+      margin: 2rem 0 0;
+      padding: 2rem 0 0;
+      border-top: 1px solid grey; }
+      .main .widget .widget-info {
+        text-align: center; }
+        .main .widget .widget-info > img {
+          width: 30%; } }
+
+@media all and (max-width: 800px) {
+  .main .main-content {
+    width: 95%; }
+    .main .main-content .columns {
+      flex-direction: column; }
+      .main .main-content .columns .main-column {
+        width: 100% !important;
+        margin-bottom: 2em;
+        margin-left: 0.8em; }
+        .main .main-content .columns .main-column > img {
+          display: block;
+          min-width: 40%;
+          max-width: 100%; }
+        .main .main-content .columns .main-column .column-img-wrapper {
+          margin-top: 0; } }
+
+@media all and (max-width: 550px) {
+  .main .main-content {
+    width: 95%; }
+    .main .main-content .hero .content {
+      display: block;
+      float: none;
+      width: 90%; }
+    .main .main-content .hero > img {
+      max-width: none;
+      width: 90%;
+      float: none;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 2rem; } }

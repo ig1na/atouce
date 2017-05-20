@@ -1,2 +1,88 @@
 @import "bourbon/bourbon";
 @import "_settings";
+
+body, html {
+  height: 100%;
+
+}
+
+
+
+.main {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  form {
+
+  }
+
+  input, button, textarea {
+    display: block;
+  }
+
+  > .main-accueil {
+
+    height: 100%;
+    width: 100%;
+
+    > .accueil-menu {
+      //position: relative;
+      float: left;
+      height: 100%;
+      width: 5%;
+      background-color: $light-green;
+      z-index: 2;
+    }
+
+    > .accueil {
+      
+      position: relative;
+      height: 300%;
+      width: 95%;
+      margin-left: 5%;
+      top: 0;
+      transition: top 0.7s ease;
+
+      > .intro {
+        position: relative;
+        height: 33.33%;
+        
+
+        > .intro-column-wrapper {
+          height: 90%;
+          display: flex;
+          flex-direction: row;
+          overflow-y: scroll;         
+
+          > .intro-column {
+            height: 100%;
+
+          }
+        }
+      }
+
+      > .articles {
+        position: relative;
+        height: 33.33%;
+      }
+
+      > .widgets {
+        position: relative;
+        height: 33.33%;
+      }
+    }
+  }
+}
+
+.show-first {
+  top: 0 !important;
+}
+
+.show-second {
+  top: -100% !important;
+}
+
+.show-third {
+  top: -200% !important;
+}
