@@ -53,14 +53,19 @@ body {
 .light-text {
   font-weight: normal; }
 
+footer {
+  margin-top: 1em; }
+
 .mini-footer {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   clear: both;
-  background-color: #006e5a; }
+  background-color: #006e5a;
+  margin-top: 2em; }
   .mini-footer ul {
+    display: block;
     margin-left: 1rem; }
     .mini-footer ul li:first-child {
       list-style-type: none; }

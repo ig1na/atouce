@@ -1,8 +1,9 @@
-<?php 
-ini_set('display_errors', 1);
+<?php
+  ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
-include("../phpinc/includes/connexionDB.php"); ?>
+  include("../phpinc/includes/connexionDB.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -28,18 +29,23 @@ include("../phpinc/includes/connexionDB.php"); ?>
       </div>
     </header>
 
+
+
     <nav class="menu">
       <div class="menu-button">
         <a class="threelines-button" href="#menu">
         </a>
       </div>
       <ul>
-        <li><a href=""><p>Accueil</p></a></li>
-        <li><a href="/activites.php"><p>Activités</p></a></li>
-        <li><a href="/elus.php"><p>Votre CE</p></a></li>
-        <li><a href="#"><p>Les budgets</p></a></li>
-        <li><a href="#"><p>L'agenda du CE</p></a></li>
-        <li><a href="admin/"><p>Admin</p></a></li>
+        <?php
+          $menu_request = 'SELECT * FROM menu';
+
+          foreach($db->query($menu_request) as $row) {
+        ?>
+        <li><a href="<?php echo $row['link']; ?>"><p><?php echo $row['name']; ?></p></a></li>
+        <?php
+          }
+        ?>
       </ul>
     </nav>
 
@@ -65,12 +71,12 @@ include("../phpinc/includes/connexionDB.php"); ?>
     <div class="main">
       <div class="main-content">
         <div class="hero">
-          <?php 
+          <?php
             $requete = 'SELECT * FROM colonnes_accueil WHERE colonnes_accueil.zone = "intro"';
             foreach($db->query($requete) as $row) {
           ?>
 
-          <img src="images/<?php echo $row['img']; ?>" />
+          <img src="images/accueil/intro/<?php echo $row['img']; ?>" />
           <div class="hero-content">
             <h2><?php echo $row['titre']; ?></h2>
             <p><?php echo $row['contenu']; ?></p>
@@ -93,7 +99,7 @@ include("../phpinc/includes/connexionDB.php"); ?>
                   <a href="<?php echo $row['link']; ?>">
                     <p>Visiter la page</p>
                   </a>
-                  <img src="images/<?php echo $row['img']; ?>"/>
+                  <img src="images/accueil/articles/<?php echo $row['num']; ?>/<?php echo $row['img']; ?>"/>
                 </div>
               </div>
               <div class="column-content">

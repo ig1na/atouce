@@ -1,6 +1,4 @@
 @import "bourbon/bourbon";
-@import "neat/neat";
-
 @import "_settings";
 
 html {
@@ -77,13 +75,19 @@ body {
   font-weight: normal;
 }
 
+footer {
+  margin-top: 1em;
+}
+
 .mini-footer {
   position:absolute;
   left: 0; right: 0; bottom: 0;
   clear: both;
   background-color: darken($dark-green, 5);
+  margin-top: 2em;
 
   ul {
+    display: block;
     margin-left: 1rem;
     li:first-child {
       list-style-type: none;

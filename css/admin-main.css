@@ -1,44 +1,107 @@
 body, html {
   height: 100%; }
 
+header {
+  display: none; }
+
 .main {
   height: 100%;
   width: 100%;
   overflow: hidden; }
-  .main input, .main button, .main textarea {
-    display: block; }
-  .main > .main-accueil {
-    height: 100%;
-    width: 100%; }
-    .main > .main-accueil > .accueil-menu {
-      float: left;
-      height: 100%;
-      width: 5%;
+
+input, button, textarea {
+  display: block; }
+
+.main-accueil {
+  height: 100%;
+  width: 100%; }
+
+.accueil-menu {
+  float: left;
+  height: 100%;
+  width: 5%;
+  background-color: #bafff3;
+  z-index: 2; }
+
+.accueil {
+  position: relative;
+  height: 300%;
+  width: 95%;
+  margin-left: 5%;
+  transform: translateY(0);
+  top: 0;
+  transition: top 0.7s ease; }
+  .accueil .sect-title {
+    text-align: center;
+    border-bottom: 1px solid grey; }
+  .accueil form {
+    clear: both;
+    text-align: center;
+    padding-top: 1em; }
+    .accueil form h3 {
+      margin: 0 0 0.5em 0.2em; }
+    .accueil form button[class$="img"] {
+      display: none; }
+    .accueil form button {
+      float: right;
+      padding: 0.5em;
       background-color: #bafff3;
-      z-index: 2; }
-    .main > .main-accueil > .accueil {
-      position: relative;
-      height: 300%;
-      width: 95%;
-      margin-left: 5%;
-      top: 0;
-      transition: top 0.7s ease; }
-      .main > .main-accueil > .accueil > .intro {
-        position: relative;
-        height: 33.33%; }
-        .main > .main-accueil > .accueil > .intro > .intro-column-wrapper {
-          height: 90%;
-          display: flex;
-          flex-direction: row;
-          overflow-y: scroll; }
-          .main > .main-accueil > .accueil > .intro > .intro-column-wrapper > .intro-column {
-            height: 100%; }
-      .main > .main-accueil > .accueil > .articles {
-        position: relative;
-        height: 33.33%; }
-      .main > .main-accueil > .accueil > .widgets {
-        position: relative;
-        height: 33.33%; }
+      border: none;
+      transition: background-color 0.5s ease; }
+    .accueil form button:hover {
+      background-color: #54ffe1;
+      cursor: pointer; }
+    .accueil form textarea {
+      width: 100%;
+      border: none;
+      resize: none;
+      background-color: #edfffc;
+      border: 1px solid #008770;
+      box-sizing: border-box; }
+    .accueil form input[type="text"] {
+      margin: 0 auto;
+      margin-bottom: 1em;
+      background-color: #edfffc;
+      border: 1px solid #008770; }
+    .accueil form img {
+      display: block;
+      width: 100%; }
+    .accueil form .croppie-container img {
+      width: auto; }
+
+.intro {
+  position: relative;
+  height: 33.33333%;
+  overflow-y: scroll; }
+  .intro > .intro-col-wrapper {
+    display: flex;
+    justify-content: center; }
+    .intro > .intro-col-wrapper > .intro-col {
+      height: 100%;
+      width: 20%; }
+
+.articles {
+  position: relative;
+  height: 33.33333%;
+  overflow-y: scroll; }
+  .articles > .articles-col-wrapper {
+    display: flex;
+    justify-content: space-around; }
+    .articles > .articles-col-wrapper > .accueil-add-btn {
+      position: fixed;
+      left: 0;
+      text-decoration: none;
+      background-color: #bafff3;
+      font-size: 2em;
+      padding: 0 0.2em; }
+    .articles > .articles-col-wrapper > .article-col {
+      width: 20%;
+      display: inline-block; }
+
+.widgets {
+  position: relative;
+  height: 33.33333%;
+  overflow-y: scroll; }
 
 .show-first {
   top: 0 !important; }

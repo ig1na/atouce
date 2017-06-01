@@ -37,9 +37,9 @@
   width: 90%;
   margin: 0 auto; }
   .main .main-content {
-    width: 75%;
+    width: 80%;
     float: left;
-    margin: 2rem 0 0 0; }
+    margin: 2rem 0; }
     .main .main-content .hero img {
       display: block;
       float: left;
@@ -59,9 +59,10 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between; }
+      justify-content: flex-start; }
       .main .main-content .columns > .main-column {
-        width: 30%; }
+        width: 30%;
+        padding-right: 3%; }
         .main .main-content .columns > .main-column > .column-content h2 {
           line-height: 1; }
         .main .main-content .columns > .main-column > .column-content p {
@@ -178,14 +179,16 @@ footer form {
 @media all and (max-width: 550px) {
   .main .main-content {
     width: 95%; }
-    .main .main-content .hero .content {
-      display: block;
-      float: none;
-      width: 90%; }
-    .main .main-content .hero > img {
-      max-width: none;
-      width: 90%;
-      float: none;
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 2rem; } }
+    .main .main-content .hero {
+      margin-left: 0.8em; }
+      .main .main-content .hero .hero-content {
+        display: block;
+        float: none;
+        width: 100% !important; }
+      .main .main-content .hero > img {
+        max-width: none;
+        width: 100%;
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2rem; } }

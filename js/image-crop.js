@@ -1,15 +1,13 @@
-function saveImg(croppieDiv, crop, savePath) {
+function saveImg(croppieDiv, crop, category, zone, id) {
 
 	crop.croppie('result', 'base64').then(function(canv) {
 	    $.ajax({
 	        url: '../admin/upload-img.php',
 	        type: 'POST',
-	        data: {canv: canv, savePath: savePath}
+	        data: {canv: canv, category: category, zone: zone, id: id}
 	    })
 	    .done(function() {
 	        console.log("success");
-	        croppieDiv.removeClass('fadeIn');
-	        croppieDiv.addClass('fadeOut');	                 
 	    })
 	    .fail(function() {
 	        console.log("error");
@@ -22,6 +20,7 @@ function saveImg(croppieDiv, crop, savePath) {
 
 function initCroppie(croppieDiv, inputFile, cropWidth, cropHeight) {
 
+	console.log(inputFile[0]);
 	var extension = inputFile[0].value.substring(inputFile[0].value.lastIndexOf(".") + 1).toLowerCase();
 	console.log(["jpg", "jpeg", "png", "gif"].indexOf(extension));
 
@@ -39,32 +38,29 @@ function initCroppie(croppieDiv, inputFile, cropWidth, cropHeight) {
 
 		var reader = new FileReader();
 		reader.readAsDataURL(inputFile[0].files[0]);
-		
+
 		var crop = croppieDiv.croppie({
 	          viewport: { width: cropWidth, height: cropHeight},
 	          boundary: { width: cropWidth + 20, height: cropHeight + 20}
 	        });
-		
+
 		reader.onload = function(e) {
 
 			console.log('reader onload');
-			
+
 
 	        crop.croppie('bind', {
 	            url: e.target.result
 	        });
 
-	        
+
 
 	        if(crop == undefined) {
         		console.log('crop undefined');
         	}
-		};    
-
-		croppieDiv.removeClass('fadeOut');
-        croppieDiv.addClass('fadeIn');
+		};
 
 		return crop;
-		
+
 	}
 };

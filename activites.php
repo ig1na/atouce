@@ -27,20 +27,20 @@ error_reporting(E_ALL);
     </header>
 
     <nav class="menu">
-      <!--<input type="checkbox" id="menu">-->
-      <!--<label for="menu" onclick></label>-->
-
       <div class="menu-button">
         <a class="threelines-button" href="#menu">
         </a>
       </div>
       <ul>
-        <li><a href="/accueil.php"><p>Accueil</p></a></li>
-        <li><a href="/activites.php"><p>Activités</p></a></li>
-        <li><a href="/elus.php"><p>Votre CE</p></a></li>
-        <li><a href="#"><p>Les budgets</p></a></li>
-        <li><a href="#"><p>L'agenda du CE</p></a></li>
-        <li><a href="admin/"><p>Admin</p></a></li>
+        <?php
+          $menu_request = 'SELECT * FROM menu';
+
+          foreach($db->query($menu_request) as $row) {
+        ?>
+        <li><a href="<?php echo $row['link']; ?>"><p><?php echo $row['name']; ?></p></a></li>
+        <?php
+          }
+        ?>
       </ul>
     </nav>
 

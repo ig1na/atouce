@@ -1,7 +1,7 @@
 function uploadTxt(title, text, zone, id) {
 
 		$.ajax({
-			url: '../admin/upload-txt.php',
+			url: '../admin/upload-txt-accueil.php',
 			type: 'POST',
 			data: {
 				zone: zone,
