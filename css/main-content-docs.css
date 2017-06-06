@@ -4,36 +4,73 @@ h1, .light-text, h2, .light-text, h3, .light-text {
 .page-wrap > .page-header {
   text-align: center; }
 
-.radio-btn-menu {
+.entire-body {
+  margin-bottom: 5em; }
+
+.checkbox-menu {
   width: 30%;
   margin: 0 auto; }
-  .radio-btn-menu > form > ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: space-around; }
-    .radio-btn-menu > form > ul > li > input {
-      visibility: hidden;
-      display: block;
-      margin: 0 auto; }
-    .radio-btn-menu > form > ul > li > label {
-      display: block;
-      width: 50px;
-      height: 30px;
-      background-color: #008770;
-      border-radius: 30px; }
-    .radio-btn-menu > form > ul > li > label::before {
-      content: "";
-      display: block;
-      position: relative;
-      width: 26px;
-      height: 26px;
-      background-color: white;
-      border-radius: 26px;
-      top: 2px;
-      left: 2px;
-      transition: left 0.2s ease; }
-    .radio-btn-menu > form > ul > li input:checked ~ label::before {
-      left: 22px; }
-    .radio-btn-menu > form > ul > li input:checked ~ label {
-      background-color: #21ffd8; }
+  .checkbox-menu > form {
+    width: 100%; }
+    .checkbox-menu > form > ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      justify-content: space-around; }
+      .checkbox-menu > form > ul > li {
+        text-align: center; }
+        .checkbox-menu > form > ul > li .doc-type {
+          user-select: none;
+          visibility: hidden;
+          display: block;
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+          margin: 0 auto; }
+        .checkbox-menu > form > ul > li > label {
+          content: "fezfez";
+          display: list-item;
+          width: 50px;
+          height: 30px;
+          background-color: #008770;
+          border-radius: 30px;
+          user-select: none;
+          transition: background-color 0.5s ease; }
+        .checkbox-menu > form > ul > li > label::before {
+          content: "";
+          display: block;
+          position: relative;
+          width: 26px;
+          height: 26px;
+          background-color: white;
+          border-radius: 26px;
+          top: 2px;
+          left: 2px;
+          transform: translateX(0);
+          transition: transform 0.5s ease; }
+        .checkbox-menu > form > ul > li > input:checked ~ label::before {
+          transform: translateX(20px); }
+        .checkbox-menu > form > ul > li > input:checked ~ label {
+          background-color: #21ffd8; }
+
+.docs-list {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 2em; }
+  .docs-list > .doc {
+    width: 47%;
+    margin: 2em 0; }
+    .docs-list > .doc > .file-icon {
+      width: 100px;
+      float: left;
+      margin: 0 2em; }
+    .docs-list > .doc > .download-icon {
+      width: 35px;
+      float: right;
+      margin-right: 1em;
+      border: 1px solid grey;
+      cursor: pointer; }

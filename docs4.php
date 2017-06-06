@@ -32,15 +32,7 @@
 
             foreach($db->query($menu_request) as $row) {
           ?>
-
-          <li>
-            <a href='<?php echo $row["link"]; ?>'>
-              <p>
-                <?php echo $row['name']; ?>
-              </p>
-            </a>
-          </li>
-
+          <li><a href="<?php echo $row['link']; ?>"><p><?php echo $row['name']; ?></p></a></li>
           <?php
             }
           ?>
@@ -55,32 +47,41 @@
         </div>
       </div>
 
-      <div class="checkbox-menu">
+      <div class="radio-btn-menu">
         <form action="">
-          <ul>
+          <!--<ul>-->
             <?php
-              $radio_btn_menu = 'SELECT * FROM docs_toggle_menu';
+              $radio_btn_menu = 'SELECT * FROM docs_toggle_menu ORDER BY id';
 
               foreach($db->query($radio_btn_menu) as $row) {
             ?>
 
-              <li>
-                <span><?php echo $row['cat']; ?></span>
-                <input type="checkbox" class="doc-type" id="doc-type-<?php echo $row['cat']; ?>" name="file-type" cat="<?php echo $row['cat']; ?>">
-                <label for="doc-type-<?php echo $row['cat']; ?>"></label>
-              </li>
+              <!--<li>-->
+
+                <!--<span><?php echo $row['cat']; ?></span>-->
+                <!--<input type="checkbox" class="doc-type" id="doc-type-<?php echo $row['id']; ?>" name="file-type" value="<?php echo $row['cat']; ?>">
+                <label for="doc-type-<?php echo $row['id']; ?>">regerg</label>-->
+              <!--</li>-->
 
             <?php
               }
             ?>
 
-            <li>
-              <span>autres</span>
+            <!--<li>-->
+            <label for="doc-type-all">
+              <span>tous</span>
               <input type="checkbox" class="doc-type" id="doc-type-all" name="file-type" value="all" checked>
-              <label for="doc-type-all"></label>
-            </li>
-
-          </ul>
+              </label>
+              <label for="doc-type-all2">
+                <span>tous</span>
+                <input type="checkbox" class="doc-type" id="doc-type-all2" name="file-type" value="all" checked>
+                </label>
+                <label for="doc-type-all3">
+                  <span>tous</span>
+                  <input type="checkbox" class="doc-type" id="doc-type-all3" name="file-type" value="all" checked>
+                  </label>
+            <!--</li>-->
+          <!--</ul>-->
         </form>
       </div>
 
@@ -92,7 +93,7 @@
           foreach($db->query($docs) as $row) {
         ?>
 
-        <div class="doc" cat="<?php echo $row['cat']; ?>" id="doc-<?php echo $row['cat']; ?>-<?php echo $row['id']; ?>">
+        <div class="doc" id="doc-<?php echo $row['cat']; ?>-<?php echo $row['id']; ?>">
           <img class="file-icon" src="icones/<?php echo $row['filetype']; ?>.svg" />
           <h2><?php echo $row['titre']; ?></h2>
           <p><?php echo $row['description']; ?></p>
@@ -125,6 +126,6 @@
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous"></script>
     <script src="js/mobile-menu.js"></script>
-    <script src="js/page-docs.js"></script>
+    <!--<script src="js/page-docs.js"></script>-->
   </body>
 </html>

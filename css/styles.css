@@ -30,6 +30,9 @@ body {
   .fadeOut * {
     display: none; }
 
+.hide {
+  display: none; }
+
 .header-wrapper {
   z-index: 1;
   position: relative;

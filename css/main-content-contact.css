@@ -1,0 +1,50 @@
+body {
+  background-color: #bafff3; }
+
+.contact-backgr {
+  width: 100%;
+  height: 200px;
+  background-image: url("../images/contact/contact.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .contact-backgr > h1.contact-title {
+    font-size: 5em;
+    color: white;
+    text-shadow: 0 1px 3px black; }
+
+form {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5em;
+  padding: 5% 0; }
+  form input[type="color"], form input[type="date"], form input[type="datetime"], form input[type="datetime-local"], form input[type="email"], form input[type="month"], form input[type="number"], form input[type="password"], form input[type="search"], form input[type="tel"], form input[type="text"], form input[type="time"], form input[type="url"], form input[type="week"], form input:not([type]), form textarea {
+    padding: 0 0.5rem;
+    border: none;
+    background-color: #bafff3;
+    box-shadow: inset 0 2px 5px #00ba9a;
+    transition: all 0.5s ease; }
+  form input:focus, form textarea:focus {
+    background-color: #21ffd8;
+    box-shadow: none; }
+  form > input[type="text"], form textarea {
+    display: block;
+    margin: 0 auto;
+    resize: none;
+    width: 50%; }
+  form > input[type="text"] {
+    height: 30px;
+    margin-bottom: 2em; }
+  form > input[type="submit"] {
+    position: relative;
+    display: block;
+    margin: 2rem auto 0;
+    cursor: pointer;
+    border: none;
+    background-color: #21ffd8;
+    padding: 0 1rem; }
+  form > input[type="submit"]:active {
+    box-shadow: none;
+    top: 2px; }

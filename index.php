@@ -46,6 +46,7 @@
         <?php
           }
         ?>
+
       </ul>
     </nav>
 
@@ -134,7 +135,7 @@
     <footer>
       <form action="/action_page.php">
         <h2>Nous contacter :</h2>
-        <label for="nom">Nom : </label>
+        <label for="nom">Nom :</label>
         <input type="text" name="nom" id="nom"><br>
         <label for="prenom">Prénom :</label>
         <input type="text" name="prenom" id="prenom"><br>

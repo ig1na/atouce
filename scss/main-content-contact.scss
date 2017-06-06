@@ -1,0 +1,79 @@
+@import "bourbon/bourbon";
+@import "_settings";
+
+body {
+  background-color: $light-green;
+}
+
+.contact-backgr {
+  width: 100%;
+  height: 200px;
+  background-image: url("../images/contact/contact.jpg");
+  background-position: center;
+  background-attachment:  fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > h1.contact-title {
+    font-size: 5em;
+    color: white;
+    text-shadow: 0 1px 3px black;
+  }
+
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5em;
+  padding: 5% 0;
+
+  #{$all-text-inputs} {
+
+    @include padding(0 0.5rem 0 0.5rem);
+    border: none;
+    //border-radius: 5px;
+    background-color: $light-green;
+    box-shadow: inset 0 2px 5px darken($light-green, 50);
+    transition: all 0.5s ease;
+  }
+
+  input:focus, textarea:focus {
+    background-color: $medium-green;
+    box-shadow: none;
+  }
+
+  > input[type="text"], textarea {
+    display: block;
+    margin: 0 auto;
+    resize: none;
+    width: 50%;
+  }
+
+  > input[type="text"] {
+    height: 30px;
+    margin-bottom: 2em;
+  }
+
+
+
+  > input[type="submit"] {
+    position: relative;
+    display: block;
+    @include margin(2rem auto 0 auto);
+    cursor: pointer;
+
+    border:none;
+    background-color: $medium-green;
+
+    @include padding(0 1rem 0 1rem);
+  }
+
+  > input[type="submit"]:active {
+    box-shadow: none;
+    top: 2px;
+    //transform: translateY(2px);
+  }
+}

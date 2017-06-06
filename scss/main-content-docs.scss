@@ -16,12 +16,16 @@ h1, h2, h3 {
   }
 }
 
-.radio-btn-menu {
+.entire-body {
+  margin-bottom: 5em;
+}
+
+.checkbox-menu {
   width: 30%;
   margin: 0 auto;
 
   > form {
-    //width: 100%;
+    width: 100%;
     > ul {
       display: flex;
       flex-direction: row;
@@ -29,20 +33,28 @@ h1, h2, h3 {
       justify-content: space-around;
 
       > li {
+        text-align: center;
 
-        > input {
+         .doc-type {
+          user-select:none;
           visibility: hidden;
           display: block;
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
           margin: 0 auto;
+
         }
 
         > label {
-          //content: "";
-          display: block;
+          content: "fezfez";
+          display: list-item;
           width: 50px;
           height: 30px;
           background-color: $dark-green;
           border-radius: 30px;
+          user-select:none;
+          transition: background-color 0.5s ease;
         }
 
         > label::before {
@@ -55,17 +67,48 @@ h1, h2, h3 {
           border-radius: 26px;
           top: 2px;
           left: 2px;
-          transition: left 0.2s ease;
+          transform: translateX(0);
+          transition:  transform 0.5s ease;
         }
 
-        input:checked ~ label::before {
-          left: 22px;
+        > input:checked ~ label::before {
+          transform: translateX(20px);
         }
 
-        input:checked ~ label {
+        > input:checked ~ label {
           background-color: $medium-green;
         }
       }
+    }
+  }
+}
+
+.docs-list {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 2em;
+
+  > .doc {
+    width: 47%;
+    margin: 2em 0;
+
+    > .file-icon {
+      width: 100px;
+      float: left;
+      margin: 0 2em;
+
+    }
+
+    > .download-icon {
+      width: 35px;
+      float: right;
+      margin-right: 1em;
+      border: 1px solid grey;
+      cursor: pointer;
     }
   }
 }
