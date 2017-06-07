@@ -40,8 +40,6 @@ input, button, textarea {
     padding-top: 1em; }
     .accueil form h3 {
       margin: 0 0 0.5em 0.2em; }
-    .accueil form button[class$="img"] {
-      display: none; }
     .accueil form button {
       float: right;
       padding: 0.5em;
@@ -103,11 +101,11 @@ input, button, textarea {
   height: 33.33333%;
   overflow-y: scroll; }
 
-.show-first {
+.show-1 {
   top: 0 !important; }
 
-.show-second {
+.show-2 {
   top: -100% !important; }
 
-.show-third {
+.show-3 {
   top: -200% !important; }

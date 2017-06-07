@@ -1,4 +1,13 @@
 $(document).ready(function() {
+
+    
+});
+
+
+
+
+
+/*$(document).ready(function() {
     $("a[class*='link-accueil']").click(function(event) {
         $(".accueil").removeClassRegExp(/^show/);
         $(".accueil").addClass("show-"+$(event.target).attr('class').split("-")[0]);
@@ -100,4 +109,4 @@ $.fn.removeClassRegExp = function (regexp) {
         });
     }
     return this;
-};
+};*/

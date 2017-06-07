@@ -60,7 +60,17 @@
         $images = glob($dir);
 
         foreach( $images as $image ):
-          echo "<div class='carousel-content'><div class='image' style='background: url(\"../". $image ."\") no-repeat; background-size: cover;'><div class='grey-background'></div></div><div class='carousel-link'><h1>Une équipe <span class='light-text'>à votre écoute</span></h1><a href='#'>Accéder à la page</a></div></div>";
+      ?>
+          <div class='carousel-content'>
+            <div class='image' style='background: url("../<?= $image; ?>") no-repeat; background-size: cover;'>
+              <div class='grey-background'></div>
+            </div>
+            <div class='carousel-link'>
+              <h1>Une équipe <span class='light-text'>à votre écoute</span></h1>
+              <a href='#'>Accéder à la page</a>
+            </div>
+          </div>
+      <?php
         endforeach;
 
       ?>
@@ -75,12 +85,16 @@
           <?php
             $requete = 'SELECT * FROM colonnes_accueil WHERE colonnes_accueil.zone = "intro"';
             foreach($db->query($requete) as $row) {
+              $img = $row['img'];
+              $id = $row['num'];
+              $titre = $row['titre'];
+              $contenu = $row['contenu'];
           ?>
 
-          <img src="images/accueil/intro/<?php echo $row['img']; ?>" />
+          <img src="images/accueil/intro/<?= $id; ?>/<?= $img; ?>" />
           <div class="hero-content">
-            <h2><?php echo $row['titre']; ?></h2>
-            <p><?php echo $row['contenu']; ?></p>
+            <h2><?= $titre; ?></h2>
+            <p><?= $contenu; ?></p>
           </div>
 
           <?php
@@ -92,22 +106,27 @@
           <?php
             $requete = 'SELECT * FROM colonnes_accueil WHERE colonnes_accueil.zone = "articles"';
             foreach($db->query($requete) as $row) {
+              $img = $row['img'];
+              $id = $row['num'];
+              $titre = $row['titre'];
+              $contenu = $row['contenu'];
+              $link = $row['link'];
             ?>
 
             <div class="main-column">
               <div class="column-img-wrapper">
                 <div class="column-img">
-                  <a href="<?php echo $row['link']; ?>">
+                  <a href="<?= $link; ?>">
                     <p>Visiter la page</p>
                   </a>
-                  <img src="images/accueil/articles/<?php echo $row['num']; ?>/<?php echo $row['img']; ?>"/>
+                  <img src="images/accueil/articles/<?= $id; ?>/<?= $img; ?>"/>
                 </div>
               </div>
               <div class="column-content">
-                <h2><?php echo $row['titre']; ?></h2>
-                <p><?php echo $row['contenu']; ?></p>
+                <h2><?= $titre; ?></h2>
+                <p><?= $contenu; ?></p>
               </div>
-              <a href="<?php echo $row['link']; ?>">En savoir plus..</a>
+              <a href="<?= $link; ?>">En savoir plus..</a>
             </div>
 
             <?php

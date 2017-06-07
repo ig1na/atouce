@@ -39,11 +39,6 @@ input, button, textarea {
 
 .accueil {
 
-  .sect-title {
-    text-align: center;
-    border-bottom: 1px solid grey;
-  }
-
   position: relative;
   height: 100% * $nb-sect-accueil;
   width: 95%;
@@ -52,6 +47,13 @@ input, button, textarea {
   top: 0;
   transition: top 0.7s ease;
 
+  .sect-title {
+    text-align: center;
+    border-bottom: 1px solid grey;
+  }
+
+  
+
   form {
     clear: both;
     text-align: center;
@@ -59,10 +61,6 @@ input, button, textarea {
 
     h3 {
       margin: 0 0 0.5em 0.2em;
-    }
-
-    button[class$="img"] {
-      display: none;
     }
 
     button {
@@ -166,14 +164,14 @@ input, button, textarea {
 
 
 
-.show-first {
+.show-1 {
   top: 0 !important;
 }
 
-.show-second {
+.show-2 {
   top: -100% !important;
 }
 
-.show-third {
+.show-3 {
   top: -200% !important;
 }

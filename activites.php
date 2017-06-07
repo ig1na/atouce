@@ -55,11 +55,19 @@ error_reporting(E_ALL);
           <div class="cat-img-wrapper">
             <?php
             $requete = 'SELECT * FROM cat_activite';
-            foreach ($db->query($requete) as $row) {
+            foreach ($db->query($requete) as $i=>$row) {
+            ?>
 
-              echo "<div class='cat-img'><div class='cat-img-link' id='". $row['id'] ."'><img src='images/paris.jpg'></div></div>";
+              <div class="cat-img">
+              	<div class="cat-img-link" id="cat-img-link-<?=$row['id'];?>" number="<?= $i ?>">
+              		<img src="images/paris.jpg">
+              	</div>
+              </div>
+
+            <?php
             }
             ?>
+
           </div>
         </div>
 
@@ -68,26 +76,38 @@ error_reporting(E_ALL);
           //$requete_cat = 'SELECT * FROM cat_activite';
           $categories = $db->prepare('SELECT * FROM cat_activite');
           $categories->execute();
+          $act_index = 0;
 
-          foreach ($categories as $row_cat) {
-            echo "<div class='page-activites". $row_cat['id'] ." fadeOut'>";
+          foreach ($categories as $cat_index=>$row_cat) {
+          ?>
+            <div class="page-activites fadeOut" id="page-activites-<?= $row_cat['id']; ?>" number="<?= $cat_index ?>">
 
-            //$requete_act = 'SELECT * FROM activite WHERE activite.categorie = "'.$row_cat["titre"]. '"';
-            $activites = $db->query('SELECT * FROM activite WHERE activite.categorie = "'.$row_cat["titre"]. '"');
+            <?php
+            $requete_act = 'SELECT * FROM activite WHERE activite.categorie = "'.$row_cat["titre"]. '"';
+            $activites = $db->query($requete_act);
             $activites->execute();
 
             foreach ($activites as $row_act) {
-              echo "<div class='activite'>";
-              echo "<img src='images/". $row_act['img'] ."'>";
-              echo "<div class='activite-content'>";
-              echo "<h2>". $row_act['titre_act'] ."</h2>";
-              echo "<p>". $row_act['texte'] ."</p>";
-              echo "<a href='#' class='act-link' id='". $row_act['id'] .":". $row_act['titre_act'] ."'>Lien</a>";
-              echo "</div>";
-              echo "</div>";
-            }
-            echo "</div>";
+            	
+            ?>
 
+              <div class="activite">
+              <img src="images/<?= $row_act['img']; ?>">
+              <div class="activite-content">
+              <h2><?= $row_act['titre_act']; ?></h2>
+              <p><?= $row_act['texte']; ?></p>
+              <a href="#" class="act-link" number="<?= $act_index ?>">Lien</a>
+              </div>
+              </div>
+
+            <?php
+            $act_index++;
+            }
+            ?>
+
+           	</div>
+
+          <?php
           }
           $activites->closeCursor();
           $categories->closeCursor();
@@ -105,11 +125,14 @@ error_reporting(E_ALL);
             $activites->execute();
 
             foreach($activites as $row_act) {
-              echo "<div class='main-act-content". $row_act['id'] ." fadeOut'>";
-              echo "<img class='main-act-img' src='images/". $row_act['img'] ."'>";
-              echo "<h2 class='main-act-title'>". $row_act['titre_act'] ."</h2>";
-              echo "<p class='main-act-text'>". $row_act['texte'] ."</p>";
-              echo "</div>";
+        ?>
+              <div class='main-act-content fadeOut'>
+	              <img class='main-act-img' src='images/<?= $row_act['img'] ?>'>
+	              <h2 class='main-act-title'><?= $row_act['titre_act'] ?></h2>
+	              <p class='main-act-text'><?= $row_act['texte'] ?></p>
+              </div>
+
+            <?php
             }
 
           }

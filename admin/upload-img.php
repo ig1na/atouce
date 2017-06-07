@@ -8,13 +8,18 @@ if(!empty($_POST['canv'])){
 	$data = $_POST['canv'];
 	$data = substr($data,strpos($data,",")+1);
 	$data = base64_decode($data);
-	$file = "../images/". $_POST['category'] . "/" . $_POST['id'];
-    $exploded_path = explode('/', $file);
-    $file_name = array_pop(explode('/', $_POST['category'])) . "-" . time() . ".png";
+	$cat = $_POST['category'];
+	$zone = array_pop(explode('/', $cat));
 
-    $request = 'UPDATE colonnes_accueil SET img="'. $file_name .'" WHERE colonnes_accueil.num = "'. $_POST["id"] .'" AND colonnes_accueil.zone = "'. $_POST["zone"] .'"';
+	$dir = "../images/". $_POST['category'] . "/" . $_POST['id'];
 
-		file_force_contents($file, $file_name, $data);
+    $file_name = $zone . "-" . time() . ".png";
+
+    $request = 'UPDATE colonnes_accueil SET img="'. $file_name .'" WHERE colonnes_accueil.num = "'. $_POST["id"] .'" AND colonnes_accueil.zone = "'. $zone .'"';
+
+    echo $request;
+
+	file_force_contents($dir, $file_name, $data);
 
     $db->query($request);
 	//file_put_contents($file, $data);
@@ -37,7 +42,7 @@ function file_force_contents($dir, $file_name, $contents){
     	}
 	}
 
-	echo "$dir/$file_name";
+	
 	file_put_contents("$dir/$file_name", $contents);
 
 	$folder_files = glob("$dir/*");

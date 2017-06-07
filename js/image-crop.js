@@ -1,10 +1,10 @@
-function saveImg(croppieDiv, crop, category, zone, id) {
+function saveImg(crop, category, id) {
 
 	crop.croppie('result', 'base64').then(function(canv) {
 	    $.ajax({
 	        url: '../admin/upload-img.php',
 	        type: 'POST',
-	        data: {canv: canv, category: category, zone: zone, id: id}
+	        data: {canv: canv, category: category, id: id}
 	    })
 	    .done(function() {
 	        console.log("success");
