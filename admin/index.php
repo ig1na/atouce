@@ -66,45 +66,46 @@
                 $contenu = $row['contenu'];
               ?>
 
-              <div class="intro-col" num="<?= $id; ?>">
+              <div class="update-col" num="<?= $id; ?>" cat="intro">
 
                 <form method="post" action="" enctype="multipart/form-data">
                   <h3>Modifier l'image :</h3>
                   <div class="image-upload">
-                    <div class="intro-croppie">
-
+                    <div class="croppie">
                       <img src="../images/accueil/intro/<?= $id; ?>/<?= $img; ?>" />
                     </div>
 
                     <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
-                    <input type="file" name="image-file" class="image-file-intro" value="<?= $img; ?>"/>
-                    <button type="button" class="btn-sbm-intro-img hide">Envoyer</button>
+                    <input type="file" name="image-file" class="image-file" value="<?= $img; ?>"/>
+                    <button type="button" class="btn-sbm-img hide">Envoyer</button>
                   </div>
                 </form>
 
                 <form method="post" action="">
-
                   <h3>Modifier le texte :</h3>
-                  <label for="intro-title">Modifier le titre :</label>
-                  <input type="text" name="intro-title" class="intro-title" value="<?= $titre; ?>"/>
-                  <label for="txt">Modifier le texte d'intro :</label>
-                  <textarea name="txt" class="intro-textarea" rows="10" cols="40"><?= $contenu; ?></textarea>
-                  <button type="button" class="btn-sbm-intro-txt">Envoyer</button>
+                  <div class="txt-upload">
+                    <label for="title">Modifier le titre :</label>
+                    <input type="text" name="title" class="title" maxlength="50" value="<?= $titre; ?>"/>
+                    <p class="max-char-nb-title">Maximum 50 caractères. Reste <span class="nb-remaining-chars-title"></span> caractères</p>
+                    <label for="txt">Modifier le texte d'intro :</label>
+                    <textarea name="txt" class="txt" maxlength="1500" rows="10" cols="40"><?= $contenu; ?></textarea>
+                    <p class="max-char-nb-txt">Maximum 1500 caractères. Reste <span class="nb-remaining-chars-txt"></span> caractères</p>
+                    <button type="button" class="btn-sbm-txt">Envoyer</button>
+                  </div>
                 </form>
               </div>
             <?php
               }
             ?>
-
             </div>
-
           </div>
 
           <div class="articles">
-            <div class="sect-title"><h1>Modifier/Ajouter/Supprimer des colonnes</h1></div>
+            <div class="sect-title">
+              <h1>Modifier/Ajouter/Supprimer des colonnes</h1>
+            </div>
 
             <div class="articles-col-wrapper">
-
               <a href="#" class="accueil-add-btn" id="articles-add-btn">+</a>
 
               <?php
@@ -117,34 +118,31 @@
                   $contenu = $row['contenu'];
                ?>
 
-               <div class="article-col" num="<?= $id; ?>">
+               <div class="update-col" num="<?= $id; ?>" cat="articles">
 
                 <form method="post" action="" enctype="multipart/form-data">
                   <h3>Modifier l'image :</h3>
-                  <div class="image-article-upload">
-
-                    <div class="article-croppie">
+                  <div class="image-upload">
+                    <div class="croppie">
                       <img src="../images/accueil/articles/<?= $id; ?>/<?= $img; ?>" />
                     </div>
-
                     <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
-                    <input type="file" name="image-file-article" class="image-file-article" />
-                    <button type="button" class="btn-sbm-article-img hide">Envoyer l'image</button>
+                    <input type="file" name="image-file" class="image-file" />
+                    <button type="button" class="btn-sbm-img hide">Envoyer l'image</button>
                   </div>
                 </form>
 
                 <form method="post" action="">
 
                   <h3>Modifier le texte :</h3>
-                  <div class="article-txt-upload">
-                    <label for="article-title">Modifier le titre :</label>
-                    <input type="text" name="article-title" class="article-title" maxlength="50" value="<?= $titre; ?>"/>
-                    <p class="max-char-nb">Maximum 50 caractères</p>
-                    <label for="article-txt">Modifier le texte :</label>
-                    <textarea name="article-txt" class="article-txt" maxlength="1500" rows="10" cols="40"><?= $contenu; ?></textarea>
-                    <p class="max-char-nb">Maximum 1500 caractères</p>
-                    <p class="remaining-chars">Reste <span class="nb-remaining-chars-art"></span> caractères</p>
-                    <button type="button" class="btn-sbm-article-txt">Envoyer le texte</button>
+                  <div class="txt-upload">
+                    <label for="title">Modifier le titre :</label>
+                    <input type="text" name="title" class="title" maxlength="50" value="<?= $titre; ?>"/>
+                    <p class="max-char-nb-title">Maximum 50 caractères. Reste <span class="nb-remaining-chars-title"></span> caractères</p>
+                    <label for="txt">Modifier le texte :</label>
+                    <textarea name="txt" class="txt" maxlength="1500" rows="10" cols="40"><?= $contenu; ?></textarea>
+                    <p class="max-char-nb-txt">Maximum 1500 caractères. Reste <span class="nb-remaining-chars-txt"></span> caractères</p>
+                    <button type="button" class="btn-sbm-txt">Envoyer le texte</button>
                   </div>
                 </form>
               </div>

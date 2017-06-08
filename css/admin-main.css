@@ -58,7 +58,6 @@ input, button, textarea {
       box-sizing: border-box; }
     .accueil form input[type="text"] {
       margin: 0 auto;
-      margin-bottom: 1em;
       background-color: #edfffc;
       border: 1px solid #008770; }
     .accueil form img {
@@ -74,9 +73,6 @@ input, button, textarea {
   .intro > .intro-col-wrapper {
     display: flex;
     justify-content: center; }
-    .intro > .intro-col-wrapper > .intro-col {
-      height: 100%;
-      width: 20%; }
 
 .articles {
   position: relative;
@@ -92,9 +88,15 @@ input, button, textarea {
       background-color: #bafff3;
       font-size: 2em;
       padding: 0 0.2em; }
-    .articles > .articles-col-wrapper > .article-col {
-      width: 20%;
-      display: inline-block; }
+
+.update-col {
+  width: 20%; }
+
+.max-char-nb-title, .max-char-nb-txt {
+  font-size: 0.7em;
+  margin-bottom: 1em;
+  color: black;
+  transition: color 0.2s ease; }
 
 .widgets {
   position: relative;

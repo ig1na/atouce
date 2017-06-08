@@ -91,7 +91,7 @@ input, button, textarea {
 
     input[type="text"] {
       margin: 0 auto;
-      margin-bottom: 1em;
+      //margin-bottom: 1em;
       background-color: lighten($light-green, 10);
       border: 1px solid $dark-green;
     }
@@ -119,16 +119,8 @@ input, button, textarea {
   @include accueil-sect();
 
   > .intro-col-wrapper {
-
     display: flex;
     justify-content: center;
-
-    > .intro-col {
-
-      height: 100%;
-      width: 20%;
-
-    }
   }
 }
 
@@ -136,6 +128,9 @@ input, button, textarea {
   @include accueil-sect();
 
   > .articles-col-wrapper {
+
+    display: flex;
+    justify-content: space-around;
 
     > .accueil-add-btn {
       position: fixed;
@@ -145,16 +140,18 @@ input, button, textarea {
       font-size: 2em;
       padding: 0 0.2em;
     }
-
-    display: flex;
-    justify-content: space-around;
-
-    > .article-col {
-
-      width: 20%;
-      display: inline-block;
-    }
   }
+}
+
+.update-col {
+  width: 20%;
+}
+
+.max-char-nb-title, .max-char-nb-txt {
+  font-size: 0.7em;
+  margin-bottom: 1em;
+  color: black;
+  transition: color 0.2s ease;
 }
 
 .widgets {
