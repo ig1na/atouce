@@ -18,104 +18,6 @@ $(document).ready(function() {
 		}
 	});
 
-	//gere l'upload de l'image et du texte de la page d'accueil
-	/*$('.update-col').each(function() {
-		var $this = $(this);
-		var num = $this.attr('num');
-		var cat = $this.attr('cat');
-		var $sbmBtn = $this.find('.btn-sbm-img');
-		var $delBtn = $this.find('.btn-del-col');
-		var $croppie;
-
-		$this.find('.image-file').change(function() {
-			$croppie = initCroppie($this.find('.croppie'), $(this), 290, 200);
-			$sbmBtn.removeClass('hide');
-		});
-
-		$sbmBtn.click(function() {
-			saveImg($croppie, 'accueil/' + cat, num, function() {
-				$croppie.attr('class', 'croppie');
-				$croppie.load("index.php .update-col[num='"+num+"'][cat='"+cat+"'] .croppie > img");
-			});
-			$sbmBtn.addClass('hide');
-		});
-
-		$this.find('.btn-sbm-txt').click( function() {
-			uploadTxt($this.find('input[name="title"]').val(), $this.find('textarea[name="txt"]').val(), 'articles', num);
-		});
-
-		$this.find('.txt-input').each(function() {
-			var $inputDiv = $(this).find('.txt');
-			var $maxCharDiv = $(this).find('.max-char-nb');
-			var $remainingCharDiv = $(this).find('.nb-remaining-chars');
-			var maxNbChar = $inputDiv.attr('maxlength');
-			var nbRemainingChars = maxNbChar - $inputDiv.val().length;
-
-			$remainingCharDiv.text(nbRemainingChars);
-			if(nbRemainingChars === 0) {
-				$maxCharDiv.css('color', 'red');
-				$remainingCharDiv.css('color', 'red');
-			}
-
-			$inputDiv.on('input', function() {
-				nbRemainingChars = maxNbChar - $inputDiv.val().length;
-				$remainingCharDiv.text(nbRemainingChars);
-
-				if(nbRemainingChars === 0) {
-					$maxCharDiv.css('color', 'red');
-					$remainingCharDiv.css('color', 'red');
-					return;
-				}
-
-				$maxCharDiv.css('color', 'black');
-				$remainingCharDiv.css('color', 'black');
-			});
-		});	
-
-		$('.articles-col-wrapper').on('click', '#btn-del-col-'+num, function() {	
-			$.ajax({
-				url: '../admin/delete-col.php',
-				type: 'POST',
-				data: {
-					num: num,
-					zone: cat
-				}
-			})
-			.done(function() {
-				console.log('success');
-				$('.articles').load('index.php .articles-col-wrapper');
-			})
-			.fail(function() {
-				console.log('error');
-			})
-			.always(function() {
-				console.log('complete');
-			});
-		});
-	});
-
-	
-
-	$('.articles-col-wrapper').on('click', '.accueil-add-btn', function() {
-		$.ajax({
-			url: '../admin/add-col.php',
-			type: 'POST',
-			data: {
-				zone: 'articles'
-			}
-		})
-		.done(function() {
-			console.log('success');
-			$('.articles').load('index.php .articles-col-wrapper');
-		})
-		.fail(function() {
-			console.log('error');
-		})
-		.always(function() {
-			console.log('complete');
-		});
-	});*/
-
 	$('.txt-input').each(function() {
 		var $this = $(this);
 		var nbRemainingChars = $this.children('.txt').attr('maxlength') - $this.val().length;
@@ -191,15 +93,11 @@ $(document).ready(function() {
 	}).on('click', '.update-col .btn-sbm-txt', function() {
 		$this = $(this);
 		$updCol = $this.closest('.update-col');
-		console.log('updatecol: ' + $updCol);
 		zone = $updCol.attr('cat');
-		console.log('zone: ' + zone);
 		id = $updCol.attr('num');
-		console.log('id: ' + id);
 		title = $updCol.find('input[name="title"]').val();
-		console.log('title: ' + title);
 		text = $updCol.find('textarea[name="txt"]').val();
-		console.log('txt: ' + text);
+
 
 		$.ajax({
 			url: '../admin/upload-txt-accueil.php',
@@ -213,7 +111,6 @@ $(document).ready(function() {
 		})
 		.done(function() {
 			console.log("success");
-			console.log(zone + " " + id + " " + title + " " + text);
 		})
 		.fail(function() {
 			console.log("error");
