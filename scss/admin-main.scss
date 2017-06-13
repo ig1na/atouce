@@ -49,10 +49,9 @@ input, button, textarea {
 
   .sect-title {
     text-align: center;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid $light-green;
   }
 
-  
 
   form {
     clear: both;
@@ -77,6 +76,10 @@ input, button, textarea {
     button:hover {
       background-color: darken($light-green, 20);
       cursor: pointer;
+    }
+
+    .btn-del-col {
+      float: left;
     }
 
     textarea {
@@ -131,6 +134,7 @@ input, button, textarea {
 
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 
     > .accueil-add-btn {
       position: fixed;
@@ -145,11 +149,18 @@ input, button, textarea {
 
 .update-col {
   width: 20%;
+  margin: 0 2em;
 }
 
-.max-char-nb-title, .max-char-nb-txt {
+[class^='max-char-nb'] {
   font-size: 0.7em;
   margin-bottom: 1em;
+  color: black;
+  transition: color 0.2s ease;
+}
+
+[class^='nb-remaining-chars'] {
+  font-size: 1.2em;
   color: black;
   transition: color 0.2s ease;
 }

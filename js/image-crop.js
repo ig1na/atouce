@@ -1,4 +1,4 @@
-function saveImg(crop, category, id) {
+function saveImg(crop, category, id, callback) {
 
 	crop.croppie('result', 'base64').then(function(canv) {
 	    $.ajax({
@@ -8,6 +8,7 @@ function saveImg(crop, category, id) {
 	    })
 	    .done(function() {
 	        console.log("success");
+	        callback();
 	    })
 	    .fail(function() {
 	        console.log("error");

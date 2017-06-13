@@ -64,44 +64,16 @@
                 $id = $row['num'];
                 $titre = $row['titre'];
                 $contenu = $row['contenu'];
-              ?>
-
-              <div class="update-col" num="<?= $id; ?>" cat="intro">
-
-                <form method="post" action="" enctype="multipart/form-data">
-                  <h3>Modifier l'image :</h3>
-                  <div class="image-upload">
-                    <div class="croppie">
-                      <img src="../images/accueil/intro/<?= $id; ?>/<?= $img; ?>" />
-                    </div>
-
-                    <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
-                    <input type="file" name="image-file" class="image-file" value="<?= $img; ?>"/>
-                    <button type="button" class="btn-sbm-img hide">Envoyer</button>
-                  </div>
-                </form>
-
-                <form method="post" action="">
-                  <h3>Modifier le texte :</h3>
-                  <div class="txt-upload">
-                    <label for="title">Modifier le titre :</label>
-                    <input type="text" name="title" class="title" maxlength="50" value="<?= $titre; ?>"/>
-                    <p class="max-char-nb-title">Maximum 50 caractères. Reste <span class="nb-remaining-chars-title"></span> caractères</p>
-                    <label for="txt">Modifier le texte d'intro :</label>
-                    <textarea name="txt" class="txt" maxlength="1500" rows="10" cols="40"><?= $contenu; ?></textarea>
-                    <p class="max-char-nb-txt">Maximum 1500 caractères. Reste <span class="nb-remaining-chars-txt"></span> caractères</p>
-                    <button type="button" class="btn-sbm-txt">Envoyer</button>
-                  </div>
-                </form>
-              </div>
-            <?php
+                $cat = $row['zone'];
+              
+              include('update-col.php');
               }
             ?>
             </div>
           </div>
 
           <div class="articles">
-            <div class="sect-title">
+            <div class="sect-title" id="sect-title-articles">
               <h1>Modifier/Ajouter/Supprimer des colonnes</h1>
             </div>
 
@@ -116,37 +88,9 @@
                   $titre = $row['titre'];
                   $img = $row['img'];
                   $contenu = $row['contenu'];
-               ?>
+                  $cat = $row['zone'];
 
-               <div class="update-col" num="<?= $id; ?>" cat="articles">
-
-                <form method="post" action="" enctype="multipart/form-data">
-                  <h3>Modifier l'image :</h3>
-                  <div class="image-upload">
-                    <div class="croppie">
-                      <img src="../images/accueil/articles/<?= $id; ?>/<?= $img; ?>" />
-                    </div>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
-                    <input type="file" name="image-file" class="image-file" />
-                    <button type="button" class="btn-sbm-img hide">Envoyer l'image</button>
-                  </div>
-                </form>
-
-                <form method="post" action="">
-
-                  <h3>Modifier le texte :</h3>
-                  <div class="txt-upload">
-                    <label for="title">Modifier le titre :</label>
-                    <input type="text" name="title" class="title" maxlength="50" value="<?= $titre; ?>"/>
-                    <p class="max-char-nb-title">Maximum 50 caractères. Reste <span class="nb-remaining-chars-title"></span> caractères</p>
-                    <label for="txt">Modifier le texte :</label>
-                    <textarea name="txt" class="txt" maxlength="1500" rows="10" cols="40"><?= $contenu; ?></textarea>
-                    <p class="max-char-nb-txt">Maximum 1500 caractères. Reste <span class="nb-remaining-chars-txt"></span> caractères</p>
-                    <button type="button" class="btn-sbm-txt">Envoyer le texte</button>
-                  </div>
-                </form>
-              </div>
-              <?php
+                  include('update-col.php');
                 }
               ?>
             </div>
@@ -156,8 +100,6 @@
             <div class="sect-title"><h1>Gérer les widgets</h1></div>
 
             <div class="widgets-col-wrapper">
-
-
             </div>
           </div>
 
