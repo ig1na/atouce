@@ -1,0 +1,41 @@
+@import "_settings";
+
+$nb-sect-v: 3;
+
+@mixin accueil-sect(){
+	position: relative;
+	height: 100% / $nb-sect-v;
+	overflow-y: scroll;
+}
+
+#admin-accueil {
+	
+	height: 100% * $nb-sect-v;
+	.intro {
+	  @include accueil-sect();
+
+	  > .intro-col-wrapper {
+	    display: flex;
+	    justify-content: center;
+	  }
+	}
+
+	.articles {
+	  @include accueil-sect();
+
+	  > .articles-col-wrapper {
+
+	    display: flex;
+	    justify-content: space-around;
+	    flex-wrap: wrap;
+
+	    
+	  }
+	}
+}
+
+@for $i from 0 to $nb-sect-v {
+  .show-v-#{$i + 1} {
+    top: $i * -100% !important;
+  }
+}

@@ -11,11 +11,31 @@ if(!empty($_POST['canv'])){
 	$cat = $_POST['category'];
 	$zone = array_pop(explode('/', $cat));
 
-	$dir = "../images/". $_POST['category'] . "/" . $_POST['id'];
+	$table = "";
 
-    $file_name = $zone . "-" . time() . ".png";
+	if(strstr($cat, "accueil/")) {
+		$table = "colonnes_accueil";
+	} else if(strstr($cat, "news/")) {
+		$table = "news";
+	}
 
-    $request = 'UPDATE colonnes_accueil SET img="'. $file_name .'" WHERE colonnes_accueil.num = "'. $_POST["id"] .'" AND colonnes_accueil.zone = "'. $zone .'"';
+
+	
+
+	if($zone) {
+		$dir = "images/". $cat . "/" . $_POST['id'];
+		$file_name = $dir. "/" .$zone . "-" . time() . ".png";
+		$request = 'UPDATE '. $table .' SET img="'. $file_name .'" WHERE '. $table .'.num = "'. $_POST["id"] .'" AND '. $table .'.zone = "'. $zone .'"';
+		
+	} else {
+		$dir = "images/". $cat . $_POST['id'];
+		$file_name = $dir. "/" .time() . ".png";
+		$request = 'UPDATE '. $table .' SET img="'. $file_name .'" WHERE '. $table .'.num = "'. $_POST["id"] .'"';
+		
+	}
+    
+
+    
 
     echo $request;
 
@@ -36,14 +56,14 @@ function file_force_contents($dir, $file_name, $contents){
     }
 
     foreach($parts as $part) {
-			if(!is_dir($dir .= "/$part")){
+			if(!is_dir($dir .= "$part/")){
         echo "\n is not dir: \n" . $dir;
       	mkdir($dir);
     	}
 	}
 
 	
-	file_put_contents("$dir/$file_name", $contents);
+	file_put_contents("../$file_name", $contents);
 
 	$folder_files = glob("$dir/*");
 

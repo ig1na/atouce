@@ -1,3 +1,5 @@
+@import "bourbon/bourbon";
+
 $modular-scale-ratio: $golden;
 $modular-scale-base: 1.5em;
 
@@ -21,3 +23,5 @@ $logo-height: 70px;
 
 //minimum resolution
 $min-media-resolution: 660px;
+
+$nb-sect-h: 5;

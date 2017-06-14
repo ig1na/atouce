@@ -1,23 +1,6 @@
 $(document).ready(function() {
 
-	//gestion du menu, fait glisser la page en fonction du menu choisi
-	$accueil = $('.accueil');
-
-	$('.link-accueil').click(function() {
-		$accueil.attr('class', 'accueil');
-		switch($(this).attr('num')) {
-			case '1' :
-				$accueil.addClass('show-1');
-				break;
-			case '2' :
-				$accueil.addClass('show-2');
-				break;
-			case '3' :
-				$accueil.addClass('show-3');
-				break;
-		}
-	});
-
+	//detection du nombre de caractères restants
 	$('.txt-input').each(function() {
 		var $this = $(this);
 		var nbRemainingChars = $this.children('.txt').attr('maxlength') - $this.val().length;
@@ -31,7 +14,12 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.accueil').on('click', '.articles-col-wrapper .accueil-add-btn', function() {
+	//gestion des events pour ajout/modification des images et textes et pour suppression des colonnes
+	//chaque event est gere independemment et il est possible d'ajouter/modifier une ou plusieurs colonne tout 
+	//en modifiant ou supprimant une ou plusieurs colonnes
+	$('#admin-accueil').on('click', '.sect-title .accueil-add-btn', function() {
+		//gestion de l'ajout de nouvelle colonnes a la page d'accueil
+
 		$.ajax({
 			url: '../admin/add-col.php',
 			type: 'POST',
@@ -51,10 +39,11 @@ $(document).ready(function() {
 		});
 
 	}).on('click', '.update-col .btn-del-col', function() {
+		//gestion de la suppression de colonnes de la page d'accueil
 
-		var updCol = $(this).closest('.update-col');
-		var num = updCol.attr('num');
-		var cat = updCol.attr('cat');
+		updCol = $(this).closest('.update-col');
+		num = updCol.attr('num');
+		cat = updCol.attr('cat');
 
 		$.ajax({
 			url: '../admin/delete-col.php',
@@ -66,7 +55,7 @@ $(document).ready(function() {
 		})
 		.done(function() {
 			console.log('success');
-			$('.articles').load('index.php .articles-col-wrapper');
+			$('.articles').load('index.php .articles-col-wrapper, #sect-title-articles');
 		})
 		.fail(function() {
 			console.log('error');
@@ -76,6 +65,8 @@ $(document).ready(function() {
 		});
 
 	}).on('input', '.update-col .txt', function() {
+		//gestion de l'affichage du nombre de caracteres restants pour chaque input
+
 		$this = $(this);
 		$remCharsSpan = $this.next().children('.nb-remaining-chars');
 		nbRemainingChars = $this.attr('maxlength') - $this.val().length;
@@ -91,6 +82,8 @@ $(document).ready(function() {
 		}
 
 	}).on('click', '.update-col .btn-sbm-txt', function() {
+		//gestion du bouton pour soumission de modification aux textes
+
 		$this = $(this);
 		$updCol = $this.closest('.update-col');
 		zone = $updCol.attr('cat');
@@ -121,12 +114,16 @@ $(document).ready(function() {
 
 
 	}).on('change', '.update-col .image-file', function() {
+		//apparition du cropper d'image lorsqu'un fichier est selectionne
+
 		$this = $(this);
 		$croppie = initCroppie($this.siblings('.croppie'), $this, 290, 200);
 
 		$this.siblings('.btn-sbm-img').removeClass('hide');
 
 	}).on('click', '.update-col .btn-sbm-img', function() {
+		//gestion du bouton et soumission d'image croppee
+
 		$this = $(this);
 		$croppie = $this.siblings('.croppie');
 		num = $this.closest('.update-col').attr('num');

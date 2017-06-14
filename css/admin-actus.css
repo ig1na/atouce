@@ -1,0 +1,22 @@
+#admin-actus {
+  height: 100%;
+  overflow-y: scroll; }
+
+.actu-update {
+  width: 90%;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity 0.5s ease; }
+  .actu-update form > .img-upload {
+    width: 30%;
+    margin: 0 auto; }
+    .actu-update form > .img-upload > .croppie img {
+      width: 100%; }
+
+.select-menu {
+  float: right;
+  border: none;
+  background-color: #bafff3; }
+
+.show-v-1 {
+  top: 0% !important; }

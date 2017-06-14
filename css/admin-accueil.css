@@ -1,0 +1,26 @@
+#admin-accueil {
+  height: 300%; }
+  #admin-accueil .intro {
+    position: relative;
+    height: 33.33333%;
+    overflow-y: scroll; }
+    #admin-accueil .intro > .intro-col-wrapper {
+      display: flex;
+      justify-content: center; }
+  #admin-accueil .articles {
+    position: relative;
+    height: 33.33333%;
+    overflow-y: scroll; }
+    #admin-accueil .articles > .articles-col-wrapper {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; }
+
+.show-v-1 {
+  top: 0% !important; }
+
+.show-v-2 {
+  top: -100% !important; }
+
+.show-v-3 {
+  top: -200% !important; }

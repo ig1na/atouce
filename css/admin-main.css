@@ -1,3 +1,53 @@
+#admin-accueil {
+  height: 300%; }
+  #admin-accueil .intro {
+    position: relative;
+    height: 33.33333%;
+    overflow-y: scroll; }
+    #admin-accueil .intro > .intro-col-wrapper {
+      display: flex;
+      justify-content: center; }
+  #admin-accueil .articles {
+    position: relative;
+    height: 33.33333%;
+    overflow-y: scroll; }
+    #admin-accueil .articles > .articles-col-wrapper {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; }
+
+.show-v-1 {
+  top: 0% !important; }
+
+.show-v-2 {
+  top: -100% !important; }
+
+.show-v-3 {
+  top: -200% !important; }
+
+#admin-actus {
+  height: 100%;
+  overflow-y: scroll; }
+
+.actu-update {
+  width: 90%;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity 0.5s ease; }
+  .actu-update form > .img-upload {
+    width: 30%;
+    margin: 0 auto; }
+    .actu-update form > .img-upload > .croppie img {
+      width: 100%; }
+
+.select-menu {
+  float: right;
+  border: none;
+  background-color: #bafff3; }
+
+.show-v-1 {
+  top: 0% !important; }
+
 body, html {
   height: 100%; }
 
@@ -12,85 +62,69 @@ header {
 input, button, textarea {
   display: block; }
 
-.main-accueil {
+.main-admin {
   height: 100%;
   width: 100%; }
 
-.accueil-menu {
+.admin-menu {
+  position: relative;
   float: left;
   height: 100%;
-  width: 5%;
+  width: 8%;
   background-color: #bafff3;
   z-index: 2; }
 
-.accueil {
+.admin-v-wrap {
   position: relative;
-  height: 300%;
-  width: 95%;
-  margin-left: 5%;
+  width: 92%;
+  margin-left: 8%;
   transform: translateY(0);
   top: 0;
-  transition: top 0.7s ease; }
-  .accueil .sect-title {
+  transition: top 0.7s ease, opacity 0.7s ease-in; }
+  .admin-v-wrap .croppie-container img {
+    width: auto !important; }
+  .admin-v-wrap .sect-title {
     text-align: center;
     border-bottom: 1px solid #bafff3; }
-  .accueil form {
-    clear: both;
-    text-align: center;
-    padding-top: 1em; }
-    .accueil form h3 {
-      margin: 0 0 0.5em 0.2em; }
-    .accueil form button {
-      float: right;
-      padding: 0.5em;
-      background-color: #bafff3;
-      border: none;
-      transition: background-color 0.5s ease; }
-    .accueil form button:hover {
-      background-color: #54ffe1;
-      cursor: pointer; }
-    .accueil form .btn-del-col {
-      float: left; }
-    .accueil form textarea {
-      width: 100%;
-      border: none;
-      resize: none;
-      background-color: #edfffc;
-      border: 1px solid #008770;
-      box-sizing: border-box; }
-    .accueil form input[type="text"] {
-      margin: 0 auto;
-      background-color: #edfffc;
-      border: 1px solid #008770; }
-    .accueil form img {
-      display: block;
-      width: 100%; }
-    .accueil form .croppie-container img {
-      width: auto; }
-
-.intro {
-  position: relative;
-  height: 33.33333%;
-  overflow-y: scroll; }
-  .intro > .intro-col-wrapper {
-    display: flex;
-    justify-content: center; }
-
-.articles {
-  position: relative;
-  height: 33.33333%;
-  overflow-y: scroll; }
-  .articles > .articles-col-wrapper {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; }
-    .articles > .articles-col-wrapper > .accueil-add-btn {
+    .admin-v-wrap .sect-title > .accueil-add-btn {
       position: fixed;
       left: 0;
       text-decoration: none;
       background-color: #bafff3;
       font-size: 2em;
       padding: 0 0.2em; }
+  .admin-v-wrap form {
+    text-align: center;
+    padding-top: 1em; }
+    .admin-v-wrap form .txt-upload {
+      clear: both; }
+    .admin-v-wrap form h3 {
+      margin: 0 0 0.5em 0.2em; }
+    .admin-v-wrap form button {
+      float: right;
+      padding: 0.5em;
+      background-color: #bafff3;
+      border: none;
+      transition: background-color 0.5s ease; }
+    .admin-v-wrap form button:hover {
+      background-color: #54ffe1;
+      cursor: pointer; }
+    .admin-v-wrap form .btn-del-col {
+      float: left; }
+    .admin-v-wrap form textarea {
+      width: 100%;
+      border: none;
+      resize: none;
+      background-color: #edfffc;
+      border: 1px solid #008770;
+      box-sizing: border-box; }
+    .admin-v-wrap form input[type="text"] {
+      margin: 0 auto;
+      background-color: #edfffc;
+      border: 1px solid #008770; }
+    .admin-v-wrap form img {
+      display: block;
+      width: 100%; }
 
 .update-col {
   width: 20%;
@@ -109,14 +143,20 @@ input, button, textarea {
 
 .widgets {
   position: relative;
-  height: 33.33333%;
+  height: 100%;
   overflow-y: scroll; }
 
-.show-1 {
-  top: 0 !important; }
+.show-h-1 {
+  left: 0% !important; }
 
-.show-2 {
-  top: -100% !important; }
+.show-h-2 {
+  left: -100% !important; }
 
-.show-3 {
-  top: -200% !important; }
+.show-h-3 {
+  left: -200% !important; }
+
+.show-h-4 {
+  left: -300% !important; }
+
+.show-h-5 {
+  left: -400% !important; }

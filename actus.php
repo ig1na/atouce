@@ -55,7 +55,7 @@
               ?>
 
               <div class="news-slider-content">
-                <div class="news-slider-img" style="background: url('images/news/<?php echo $row['num']; ?>/<?php echo $row['img']; ?>'); background-position: center;"> </div>
+                <div class="news-slider-img" style="background: url('images/news/<?php echo $row['num']; ?>/<?php echo $row['img']; ?>'); background-size: cover;"> </div>
 
                 <h3><?php echo $row['titre']; ?></h3>
                 <p><?php echo $row['texte_desc']; ?></p>
@@ -101,7 +101,7 @@
           ?>
 
           <div class="full-news fadeOut" id="full-news-<?php echo $row['num']; ?>">
-            <img src="images/news/<?php echo $row['num']; ?>/equipe.jpg"/>
+            <img src="images/news/<?php echo $row['num']; ?>/<?php echo $row['img']; ?>"/>
             <h3><?php echo $row['titre']; ?></h3>
             <p><?php echo $row['texte']; ?></p>
           </div>

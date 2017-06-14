@@ -91,7 +91,7 @@
               $contenu = $row['contenu'];
           ?>
 
-          <img src="images/accueil/intro/<?= $id; ?>/<?= $img; ?>" />
+          <img src="<?= $img; ?>" />
           <div class="hero-content">
             <h2><?= $titre; ?></h2>
             <p><?= $contenu; ?></p>
@@ -116,18 +116,29 @@
             <div class="main-column">
               <div class="column-img-wrapper">
                 <div class="column-img">
-                  <a href="<?= $link; ?>">
-                    <p>Visiter la page</p>
+                  <a class="column-link" href="#">
+                    <p>En savoir plus..</p>
                   </a>
-                  <img src="images/accueil/articles/<?= $id; ?>/<?= $img; ?>"/>
+                  <img src="<?= $img; ?>"/>
                 </div>
               </div>
               <div class="column-content">
                 <h2><?= $titre; ?></h2>
                 <p><?= $contenu; ?></p>
               </div>
-              <a href="<?= $link; ?>">En savoir plus..</a>
+              <a class="more-link" href="#">En savoir plus..</a>
+
+              <div class="light-box-bg fadeOut">
+                <div class="light-box">
+                  <a class="close-light-box" href="#">x</a>
+                  <img src="<?= $img; ?>"/>
+                  <h2><?= $titre; ?></h2>
+                  <p><?= $contenu; ?></p>
+                </div>
+              </div>
             </div>
+
+            
 
             <?php
             }
@@ -186,5 +197,6 @@
     <script src="js/mobile-menu.js"></script>
     <script src="fullcalendar/fullcalendar.js"></script>
     <script type="text/javascript" src="js/calendar.js"></script>
+    <script type="text/javascript" src="js/page-accueil.js"></script>
   </body>
 </html>
