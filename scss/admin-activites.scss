@@ -1,0 +1,49 @@
+@import '_settings';
+$nb-sect-v: 2;
+
+#admin-activites {
+	height: 100% * $nb-sect-v;
+
+	> .cats {
+		@include accueil-sect();
+	}
+
+	> .activities {
+		@include accueil-sect();
+	}
+}
+
+.cats-act-list {
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+	margin-top: 5em;
+
+	> .cat-act-form {
+
+		> .croppie {
+
+			> img {
+				display: block;
+				margin: 0 auto;
+				width: 200px;
+			}
+		}	
+
+		> .cat-act-title {
+			margin: 1em 0;
+		}
+
+		> button {
+			margin-top: 1em;
+		}
+
+	}
+}
+
+.too-much-cats {
+	position: absolute;
+	color: darken(red, 10);
+}

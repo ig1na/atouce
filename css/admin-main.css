@@ -40,6 +40,49 @@
     .actu-update form > .img-upload > .croppie img {
       width: 100%; }
 
+.txt-upload > input[name="checkbox-une"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+.txt-upload > .checkbox-une-label {
+  display: block;
+  margin: 0 auto; }
+
+.txt-upload > .checkbox-une-label::before {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  content: "";
+  height: 20px;
+  width: 50px;
+  top: 20px;
+  left: -90px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #cc0000;
+  transition: background-color 0.2s ease; }
+
+.txt-upload > .checkbox-une-label::after {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  content: "";
+  height: 18px;
+  width: 18px;
+  top: -19px;
+  left: -105px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: white;
+  transition: left 0.2s ease; }
+
+.txt-upload > input[name="checkbox-une"]:checked ~ .checkbox-une-label::before {
+  background-color: #54ffe1; }
+
+.txt-upload > input[name="checkbox-une"]:checked ~ .checkbox-une-label::after {
+  left: -75px; }
+
 .select-menu {
   float: right;
   border: none;
@@ -47,6 +90,35 @@
 
 .show-v-1 {
   top: 0% !important; }
+
+#admin-activites {
+  height: 200%; }
+  #admin-activites > .cats {
+    position: relative;
+    height: 50%;
+    overflow-y: scroll; }
+  #admin-activites > .activities {
+    position: relative;
+    height: 50%;
+    overflow-y: scroll; }
+
+.cats-act-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 5em; }
+  .cats-act-list > .cat-act-form > .croppie > img {
+    display: block;
+    margin: 0 auto;
+    width: 200px; }
+  .cats-act-list > .cat-act-form > .cat-act-title {
+    margin: 1em 0; }
+  .cats-act-list > .cat-act-form > button {
+    margin-top: 1em; }
+
+.too-much-cats {
+  position: absolute;
+  color: #cc0000; }
 
 body, html {
   height: 100%; }
@@ -73,6 +145,11 @@ input, button, textarea {
   width: 8%;
   background-color: #bafff3;
   z-index: 2; }
+  .admin-menu > h3 {
+    margin-bottom: 0.1em;
+    margin-top: 0.4em; }
+  .admin-menu a {
+    text-decoration: none; }
 
 .admin-v-wrap {
   position: relative;
@@ -90,7 +167,7 @@ input, button, textarea {
       position: fixed;
       left: 0;
       text-decoration: none;
-      background-color: #bafff3;
+      background-color: #ffde4e;
       font-size: 2em;
       padding: 0 0.2em; }
   .admin-v-wrap form {
@@ -109,7 +186,7 @@ input, button, textarea {
     .admin-v-wrap form button:hover {
       background-color: #54ffe1;
       cursor: pointer; }
-    .admin-v-wrap form .btn-del-col {
+    .admin-v-wrap form .btn-del {
       float: left; }
     .admin-v-wrap form textarea {
       width: 100%;
@@ -143,7 +220,7 @@ input, button, textarea {
 
 .widgets {
   position: relative;
-  height: 100%;
+  height: 50%;
   overflow-y: scroll; }
 
 .show-h-1 {

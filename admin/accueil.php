@@ -1,4 +1,4 @@
-<div class="admin-v-wrap" id="admin-accueil" cat="Accueil">
+<div class="admin-v-wrap fadeOut" id="admin-accueil" cat="Accueil">
 
   <div class="intro">
     <div class="sect-title"><h1>Modifier l'intro</h1></div>

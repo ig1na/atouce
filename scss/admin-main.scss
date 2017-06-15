@@ -2,6 +2,7 @@
 @import "_settings";
 @import "admin-accueil";
 @import "admin-actus";
+@import "admin-activites";
 
 body, html {
   height: 100%;
@@ -35,6 +36,15 @@ input, button, textarea {
     width: 8%;
     background-color: $light-green;
     z-index: 2;
+
+    > h3 {
+      margin-bottom: 0.1em;
+      margin-top: 0.4em;
+    }
+
+    a {
+      text-decoration: none;
+    }
 }
 
 
@@ -60,7 +70,7 @@ input, button, textarea {
         position: fixed;
         left: 0;
         text-decoration: none;
-        background-color: $light-green;
+        background-color: #ffde4e;
         font-size: 2em;
         padding: 0 0.2em;
       }
@@ -96,7 +106,7 @@ input, button, textarea {
       cursor: pointer;
     }
 
-    .btn-del-col {
+    .btn-del {
       float: left;
     }
 

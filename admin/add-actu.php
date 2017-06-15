@@ -4,7 +4,7 @@
 	error_reporting(E_ALL);
 	include("../../phpinc/includes/connexionDB.php");
 
-	$add_actu = "INSERT INTO news (num, priority, titre, texte_desc, img, texte) VALUES (NULL, '0', 'En création..', 'Texte en cours de rédaction..', '', 'Actualité en cours de rédaction')";
+	$add_actu = "INSERT INTO news (num, priority, titre, texte_desc, img, texte) VALUES (NULL, '0', 'En création..', 'Texte en cours de rédaction..', 'images/news/newsDefaut.jpg', 'Actualité en cours de rédaction')";
 
 	echo $add_actu;
 

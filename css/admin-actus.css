@@ -13,6 +13,49 @@
     .actu-update form > .img-upload > .croppie img {
       width: 100%; }
 
+.txt-upload > input[name="checkbox-une"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+.txt-upload > .checkbox-une-label {
+  display: block;
+  margin: 0 auto; }
+
+.txt-upload > .checkbox-une-label::before {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  content: "";
+  height: 20px;
+  width: 50px;
+  top: 20px;
+  left: -90px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #cc0000;
+  transition: background-color 0.2s ease; }
+
+.txt-upload > .checkbox-une-label::after {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  content: "";
+  height: 18px;
+  width: 18px;
+  top: -19px;
+  left: -105px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: white;
+  transition: left 0.2s ease; }
+
+.txt-upload > input[name="checkbox-une"]:checked ~ .checkbox-une-label::before {
+  background-color: #54ffe1; }
+
+.txt-upload > input[name="checkbox-une"]:checked ~ .checkbox-une-label::after {
+  left: -75px; }
+
 .select-menu {
   float: right;
   border: none;

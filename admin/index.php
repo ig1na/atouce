@@ -70,6 +70,7 @@
         </div>
           <?php include('accueil.php');
                 include('actus.php');
+                include('activites.php');
            ?>
 
       </div>
@@ -84,6 +85,7 @@
     <script type="text/javascript" src="../js/upload-txt-accueil.js"></script>
     <script type="text/javascript" src="../js/admin-accueil.js"></script>
     <script type="text/javascript" src="../js/admin-actus.js"></script>
+    <script type="text/javascript" src="../js/admin-activites.js"></script>
     <script type="text/javascript" src="../js/admin.js"></script>
 
   </body>

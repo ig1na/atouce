@@ -3,7 +3,7 @@
     <h3>Modifier l'image :</h3>
     <div class="image-upload">
       <div class="croppie">
-        <img src="<?= $img; ?>" />
+        <img src="../<?= $img; ?>" />
       </div>
 
       <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
@@ -29,7 +29,7 @@
       </div>
       <button type="button" class="btn-sbm-txt">Envoyer</button>
       <?php if($cat == "articles") { ?>
-        <button type="button" class="btn-del-col" id="btn-del-col-<?= $id; ?>">Supprimer</button>
+        <button type="button" class="btn-del" id="btn-del-col-<?= $id; ?>">Supprimer</button>
       <?php } ?>
     </div>
   </form>

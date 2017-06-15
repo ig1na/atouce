@@ -25,3 +25,9 @@ $logo-height: 70px;
 $min-media-resolution: 660px;
 
 $nb-sect-h: 5;
+
+@mixin accueil-sect(){
+	position: relative;
+	height: 100% / $nb-sect-v;
+	overflow-y: scroll;
+}

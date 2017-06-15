@@ -23,12 +23,12 @@ if(!empty($_POST['canv'])){
 	
 
 	if($zone) {
-		$dir = "images/". $cat . "/" . $_POST['id'];
+		$dir = "../images/". $cat . "/" . $_POST['id'];
 		$file_name = $dir. "/" .$zone . "-" . time() . ".png";
 		$request = 'UPDATE '. $table .' SET img="'. $file_name .'" WHERE '. $table .'.num = "'. $_POST["id"] .'" AND '. $table .'.zone = "'. $zone .'"';
 		
 	} else {
-		$dir = "images/". $cat . $_POST['id'];
+		$dir = "../images/". $cat . $_POST['id'];
 		$file_name = $dir. "/" .time() . ".png";
 		$request = 'UPDATE '. $table .' SET img="'. $file_name .'" WHERE '. $table .'.num = "'. $_POST["id"] .'"';
 		
@@ -56,16 +56,18 @@ function file_force_contents($dir, $file_name, $contents){
     }
 
     foreach($parts as $part) {
-			if(!is_dir($dir .= "$part/")){
+			if(!is_dir($dir .= "/$part")){
         echo "\n is not dir: \n" . $dir;
       	mkdir($dir);
     	}
 	}
 
 	
-	file_put_contents("../$file_name", $contents);
+	file_put_contents("$file_name", $contents);
+	echo $file_name;
 
 	$folder_files = glob("$dir/*");
+	echo $dir;
 
 	if(count($folder_files) > 10) {
 		for($i = 0; $i < count($folder_files) - 10 ; $i++){

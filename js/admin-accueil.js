@@ -2,15 +2,15 @@ $(document).ready(function() {
 
 	//detection du nombre de caractères restants
 	$('.txt-input').each(function() {
-		var $this = $(this);
-		var nbRemainingChars = $this.children('.txt').attr('maxlength') - $this.val().length;
-		var $remCharsSpan = $this.find('.nb-remaining-chars');
+		$this = $(this);
+		nbRemainingChars = $this.children('.txt').attr('maxlength') - $this.children('.txt').val().length;
+		$remCharsSpan = $this.find('.nb-remaining-chars');
 
 		$remCharsSpan.text(nbRemainingChars);
 
 		if(nbRemainingChars <= 0) {
 			$remCharsSpan.css('color', 'red');
-			$this.next().css('color', 'red');
+			$this.children('.max-char-nb').css('color', 'red');
 		}
 	});
 
