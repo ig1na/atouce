@@ -10,3 +10,5 @@ if(!empty($_POST["num"]) && !empty($_POST["zone"])){
 
 	$db->query($request);
 }
+
+?>

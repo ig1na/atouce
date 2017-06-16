@@ -26,3 +26,15 @@
 .too-much-cats {
   position: absolute;
   color: #cc0000; }
+
+.sect-title > .new-cat-name {
+  padding: 0 !important; }
+  .sect-title > .new-cat-name > input {
+    position: absolute;
+    display: block;
+    margin-left: 3em !important;
+    top: 10px; }
+  .sect-title > .new-cat-name > button {
+    position: absolute;
+    height: 35px !important;
+    margin-left: 283px; }

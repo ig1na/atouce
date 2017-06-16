@@ -64,6 +64,8 @@ error_reporting(E_ALL);
               	</div>
               </div>
 
+              <h2 class="cat-title"><?= $row['titre']; ?></h2>
+
             <?php
             }
             ?>

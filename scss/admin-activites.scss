@@ -47,3 +47,23 @@ $nb-sect-v: 2;
 	position: absolute;
 	color: darken(red, 10);
 }
+
+.sect-title {
+	> .new-cat-name {
+		padding: 0 !important;
+		> input {
+			position: absolute;
+			display: block;
+			margin-left: 3em !important;
+			top: 10px;
+		}
+
+		> button {
+			position: absolute;
+
+			height: 35px !important;
+			margin-left: 283px;
+			//top: 5px;
+		}
+	}
+}

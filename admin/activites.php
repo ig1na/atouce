@@ -3,7 +3,11 @@
 	<div class="cats">
 		<div class="sect-title">
 			<a href="#" class="accueil-add-btn" id="categorie-act-add-btn">+</a>
-			
+			<form method="POST" class="new-cat-name">
+				<input type="text" name="cat-name" placeholder="Entrez le nom de la nouvelle catégorie..." size="30"/>
+				<button type="button" name="cat-name">Valider</button>
+			</form>
+
 			<h1>Gestion des catégories d'activités</h1>
 		</div>
 		<h3 class="too-much-cats hide">Vous ne pouvez pas ajouter plus de 5 catégories</h3>
@@ -13,7 +17,7 @@
 
 				foreach($db->query($cats) as $row_cats_act) {
 			?>
-					<form class="cat-act-form">
+					<form method="POST" class="cat-act-form" num="<?= $row_cats_act['id']; ?>">
 						<div class="croppie">
 							<img class="cat-act-img" src="../<?= $row_cats_act['img']; ?>">
 						</div>

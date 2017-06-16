@@ -9,11 +9,33 @@ $(document).ready(function() {
 			return;
 		}
 
+		
+
 		$.ajax({
-			url: '../admin/add-cat-actu.php',
+			url: '../admin/add-cat-activity.php',
+			type: 'POST',
+		})
+		.done(function() {
+			console.log('success');
+			$('.cats').load('index.php .cats > *');
+		})
+		.fail(function() {
+			console.log('error');
+		})
+		.always(function() {
+			console.log('complete');
+		});
+
+
+	}).on('click', '.btn-del', function() {
+		var $this = $(this);
+		var num = $this.closest('.cat-act-form').attr('num');
+
+		$.ajax({
+			url: '../admin/delete-cat-activity.php',
 			type: 'POST',
 			data: {
-				numCats: numCats
+				num: num
 			}
 		})
 		.done(function() {
