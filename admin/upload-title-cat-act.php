@@ -4,10 +4,7 @@
   	error_reporting(E_ALL);	
 	include("../../phpinc/includes/connexionDB.php");
 
-	$request = 'INSERT INTO cat_activite (num, titre, img) VALUES (NULL, "'. $_POST['catName'] .'", "images/activites/default.jpg")';
-
-	echo $request;
+	$request = 'UPDATE cat_activite SET titre = "'. $_POST['title'] .'" WHERE num = "'. $_POST['num'] .'"';
 
 	$db->query($request);
-	
 ?>

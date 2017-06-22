@@ -59,12 +59,13 @@ error_reporting(E_ALL);
             ?>
 
               <div class="cat-img">
-              	<div class="cat-img-link" id="cat-img-link-<?=$row['id'];?>" number="<?= $i ?>">
-              		<img src="images/paris.jpg">
+              	<div class="cat-img-link" id="cat-img-link-<?=$row['num'];?>" number="<?= $i ?>">
+              		<img src="<?= $row['img']; ?>">
               	</div>
+                <h2 class="cat-title"><?= $row['titre']; ?></h2>
               </div>
 
-              <h2 class="cat-title"><?= $row['titre']; ?></h2>
+              
 
             <?php
             }
@@ -82,10 +83,10 @@ error_reporting(E_ALL);
 
           foreach ($categories as $cat_index=>$row_cat) {
           ?>
-            <div class="page-activites fadeOut" id="page-activites-<?= $row_cat['id']; ?>" number="<?= $cat_index ?>">
+            <div class="page-activites fadeOut" id="page-activites-<?= $row_cat['num']; ?>" number="<?= $cat_index ?>">
 
             <?php
-            $requete_act = 'SELECT * FROM activite WHERE activite.categorie = "'.$row_cat["titre"]. '"';
+            $requete_act = 'SELECT * FROM activite WHERE activite.categorie = "'.$row_cat["titre"]. '" ORDER BY activite.date DESC';
             $activites = $db->query($requete_act);
             $activites->execute();
 
@@ -94,7 +95,7 @@ error_reporting(E_ALL);
             ?>
 
               <div class="activite">
-              <img src="images/<?= $row_act['img']; ?>">
+              <img src="<?= $row_act['img']; ?>">
               <div class="activite-content">
               <h2><?= $row_act['titre_act']; ?></h2>
               <p><?= $row_act['texte']; ?></p>
@@ -129,7 +130,7 @@ error_reporting(E_ALL);
             foreach($activites as $row_act) {
         ?>
               <div class='main-act-content fadeOut'>
-	              <img class='main-act-img' src='images/<?= $row_act['img'] ?>'>
+	              <img class='main-act-img' src='<?= $row_act['img'] ?>'>
 	              <h2 class='main-act-title'><?= $row_act['titre_act'] ?></h2>
 	              <p class='main-act-text'><?= $row_act['texte'] ?></p>
               </div>

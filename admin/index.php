@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/styles.css"/>
     <link rel="stylesheet" href="../css/admin-menu.css"/>
     <link rel="stylesheet" href="../croppie/croppie.css"/>
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Accueil Admin</title>
@@ -77,9 +77,10 @@
     </div>
 
     <script
-			  src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"></script>
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="../croppie/croppie.js"></script>
     <script type="text/javascript" src="../js/image-crop.js"></script>
     <script type="text/javascript" src="../js/upload-txt-accueil.js"></script>

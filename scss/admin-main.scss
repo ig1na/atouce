@@ -67,12 +67,13 @@ input, button, textarea {
     border-bottom: 1px solid $light-green;
 
     > .accueil-add-btn {
-        position: fixed;
+        position: absolute;
         left: 0;
         text-decoration: none;
         background-color: #ffde4e;
         font-size: 2em;
         padding: 0 0.2em;
+        z-index: 10;
       }
   }
 

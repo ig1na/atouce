@@ -17,25 +17,23 @@ if(!empty($_POST['canv'])){
 		$table = "colonnes_accueil";
 	} else if(strstr($cat, "news/")) {
 		$table = "news";
+	} else if(strstr($cat, "cat_activites/")) {
+		$table = "cat_activite";
+	} else if(strstr($cat, "activites/")) {
+		$table = "activite";
 	}
 
-
-	
-
 	if($zone) {
-		$dir = "../images/". $cat . "/" . $_POST['id'];
+		$dir = "images/". $cat . "/" . $_POST['id'];
 		$file_name = $dir. "/" .$zone . "-" . time() . ".png";
 		$request = 'UPDATE '. $table .' SET img="'. $file_name .'" WHERE '. $table .'.num = "'. $_POST["id"] .'" AND '. $table .'.zone = "'. $zone .'"';
 		
 	} else {
-		$dir = "../images/". $cat . $_POST['id'];
+		$dir = "images/". $cat . $_POST['id'];
 		$file_name = $dir. "/" .time() . ".png";
 		$request = 'UPDATE '. $table .' SET img="'. $file_name .'" WHERE '. $table .'.num = "'. $_POST["id"] .'"';
 		
 	}
-    
-
-    
 
     echo $request;
 
@@ -49,21 +47,22 @@ if(!empty($_POST['canv'])){
 function file_force_contents($dir, $file_name, $contents){
     $parts = explode('/', $dir);
 
-    $dir = '';
+    $dir = '../';
     if($parts[0] == "..") {
-    	$dir .= "..";
+    	$dir .= "../";
     	array_shift($parts);
     }
 
     foreach($parts as $part) {
-			if(!is_dir($dir .= "/$part")){
-        echo "\n is not dir: \n" . $dir;
-      	mkdir($dir);
-    	}
+		if(!is_dir($dir .= "$part/")){
+	        echo "\n is not dir: \n" . $dir;
+	      	mkdir($dir);
+	    }
+	    echo "dir: ". $dir;
 	}
 
 	
-	file_put_contents("$file_name", $contents);
+	file_put_contents("../$file_name", $contents);
 	echo $file_name;
 
 	$folder_files = glob("$dir/*");

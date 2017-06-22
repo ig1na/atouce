@@ -22,24 +22,28 @@ $nb-sect-v: 2;
 	margin-top: 5em;
 
 	> .cat-act-form {
-
+		width: 300px;
 		> .croppie {
 
 			> img {
 				display: block;
 				margin: 0 auto;
-				width: 200px;
+				width: 100%;
+			}
+		}
+
+		> .cat-update {
+
+			clear: both;
+
+			> .cat-act-title {
+				margin: 1em 0;
+			}
+
+			> button {
+				margin-top: 1em;
 			}
 		}	
-
-		> .cat-act-title {
-			margin: 1em 0;
-		}
-
-		> button {
-			margin-top: 1em;
-		}
-
 	}
 }
 
@@ -48,9 +52,75 @@ $nb-sect-v: 2;
 	color: darken(red, 10);
 }
 
+.cat-name-exists {
+	@extend .too-much-cats;
+}
+
+.act-col-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	transition: opacity 0.5s ease;
+
+	> .act-col {
+		margin-top: 1em;
+		width: 300px;
+
+		> .act-date {
+			cursor: pointer;
+		}
+	}
+
+	> h3.act-col-title {
+		position: absolute;
+	}
+
+}
+
 .sect-title {
-	> .new-cat-name {
+	> .cat-choice {
+		position: absolute;
+		right: 10px;
+		padding-top: 10px;
+	}
+
+	> .cat-choice-new-act {
+		position: absolute;
+		left: -650px;
+		margin-left: 3em;
 		padding: 0 !important;
+		z-index: 5;
+		
+		transition: left 0.5s ease;
+
+		> .select-cat-menu-new-act {
+
+			position: relative;
+			padding: 9px;
+
+			background-color: white;
+
+			button {
+				position: relative;
+				top: -9px;
+				left: 20px;
+			}
+
+			input {
+				display: inline;
+			}
+		}
+
+		
+	}
+
+	> .new-cat-name {
+
+		position: absolute;
+		padding: 0 !important;	
+		left: -350px;
+		transition: left 0.5s ease-in-out;
+
 		> input {
 			position: absolute;
 			display: block;
@@ -60,10 +130,18 @@ $nb-sect-v: 2;
 
 		> button {
 			position: absolute;
-
-			height: 35px !important;
 			margin-left: 283px;
 			//top: 5px;
 		}
 	}
+
+	.valid-btn-top {
+		height: 38px !important;
+	}
+}
+
+
+
+.slide-right {
+	left: 0 !important;
 }
